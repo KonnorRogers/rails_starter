@@ -1,0 +1,19 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    # most people dont use redis in background, so who cares?
+    ports:
+      - "6379:6379"
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_PASSWORD=password
+    # Change port so you dont conflict with a local postgres
+    ports:
+      - "6000:5432"
+    volumes:
+      - "db_data:/var/lib/postgresql/data"
+
+volumes:
+  db_data:

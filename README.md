@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails 6.1 + CableReady 5 + StimulusReflex 3.5 + Vite Example Repo
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+```bash
+git clone <TODO>
+cd <TODO>
+bundle install
+yarn install
+```
 
-* System dependencies
+In 3 different terminals run the following:
 
-* Configuration
+```bash
+bundle exec rails s
+./bin/vite dev
+docker-compose up # spins up Redis + Postgres in Docker
+```
 
-* Database creation
+Then, run the following:
 
-* Database initialization
+```bash
+bundle exec rails db:create
+```
 
-* How to run the test suite
+Then navigate to localhost:3000 and you should be good to
+go.
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
