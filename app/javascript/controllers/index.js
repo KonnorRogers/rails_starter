@@ -13,5 +13,5 @@ const controllers = import.meta.globEager('./**/*_controller.js')
 registerControllers(application, controllers)
 application.consumer = consumer
 StimulusReflex.initialize(application, { controller, isolate: true })
-StimulusReflex.debug = process.env.RAILS_ENV === 'development'
+StimulusReflex.debug = import.meta.env.DEV
 CableReady.initialize({ consumer })
