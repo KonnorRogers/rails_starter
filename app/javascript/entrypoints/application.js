@@ -3,8 +3,11 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "../channels"
 import "../controllers"
-import "./application.css"
+import "../stylesheets/application.css"
 
-Rails.start()
+if (window.Rails == null) {
+  Rails.start()
+}
+
 Turbolinks.start()
 ActiveStorage.start()
