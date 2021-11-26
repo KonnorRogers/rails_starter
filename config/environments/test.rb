@@ -5,8 +5,13 @@ require "active_support/core_ext/integer/time"
 # your test database is "scratch space" for the test suite and is wiped
 # and recreated between test runs. Don't rely on the data there!
 
+port = ENV.fetch("PORT", 3000)
+host = ENV.fetch("HOST", "localhost")
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.action_controller.default_url_options = {host: host, port: port}
+  config.action_mailer.default_url_options = {host: host, port: port}
 
   config.cache_classes = false
   config.action_view.cache_template_loading = true
@@ -53,8 +58,8 @@ Rails.application.configure do
   config.active_support.disallowed_deprecation_warnings = []
 
   # Raises error for missing translations.
-  # config.i18n.raise_on_missing_translations = true
+  config.i18n.raise_on_missing_translations = true
 
   # Annotate rendered view with file names.
-  # config.action_view.annotate_rendered_view_with_filenames = true
+  config.action_view.annotate_rendered_view_with_filenames = true
 end

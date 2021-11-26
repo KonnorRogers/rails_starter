@@ -1,0 +1,16 @@
+<h2>Resend unlock instructions</h2>
+
+<%= formoh70-k90_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <%= f.form_group do %>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <% end %>
+
+  <%= f.button_group do %>
+    <%= f.submit "Resend unlock instructions" %>
+  <% end %>
+<% end %>
+
+<%= render "devise/shared/links" %>

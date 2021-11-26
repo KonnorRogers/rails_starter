@@ -12,6 +12,12 @@
   </head>
 
   <body>
+    <div>
+      <% flash.each do |type, message| %>
+        <%= render FlashComponent.new(type: type, message: message) %>
+      <% end %>
+    </div>
+
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,28 @@
+<h2>Sign up</h2>
+
+<%= sl_form_with(model: resource, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <app-form-group>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </app-form-group>
+
+  <app-form-group>
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+      <small>(<%= @minimum_password_length %> characters minimum)</small>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", label: "" %>
+  </app-form-group>
+
+  <app-form-group>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </app-form-group>
+
+  <sl-button-group>
+    <%= f.submit "Sign up" %>
+  </sl-button-group>
+<% end %>
+
+<%= render "devise/shared/links" %>

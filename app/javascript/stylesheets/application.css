@@ -1,7 +1,17 @@
-body {
-  font-size: 1rem;
+@import '@shoelace-style/shoelace/dist/themes/light.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-div {
-  font-size: 0.875rem;
+[hidden] {
+  display: none !important;
+}
+
+button {
+  cursor: pointer;
 }

@@ -1,13 +1,19 @@
-import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
-import * as ActiveStorage from "@rails/activestorage"
+import Rails from "mrujs"
+import { ActiveStorage, Shoelace } from "mrujs/plugins"
+import "@hotwired/turbo"
 import "../channels"
 import "../controllers"
+import "../components"
+
 import "../stylesheets/application.css"
 
-if (window.Rails == null) {
-  Rails.start()
-}
 
-Turbolinks.start()
-ActiveStorage.start()
+// Import all images
+const images = import.meta.globEager('../images/**/*');
+
+Rails.start({
+  plugins: [
+    Shoelace(),
+    ActiveStorage()
+  ]
+})

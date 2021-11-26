@@ -1,0 +1,11 @@
+<div>
+  <h2 style="margin-bottom: 2rem;">Flashes!</h2>
+  <% FlashComponent::ICONS.each do |type, _| %>
+    <div style="margin-bottom: 3rem;">
+      <p>
+        <%= "render FlashComponent.new(type: :#{type}, message: <string>)" %>
+      </p>
+      <%= render FlashComponent.new(type: type, message: "I'm a :#{type} flash!") %>
+    </div>
+  <% end %>
+</div>

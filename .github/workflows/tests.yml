@@ -1,0 +1,72 @@
+name: Tests and Linting
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      # Label used to access the service container
+      postgres:
+        # Docker Hub image
+        image: postgres
+        # Provide the password for postgres
+        env:
+          POSTGRES_USER: "postgres"
+          POSTGRES_PASSWORD: "password"
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - "5432:5432"
+      chrome:
+        image: browserless/chrome:1.31-chrome-stable
+        ports: ["3000:3000"]
+        options: -e CONNECTION_TIMEOUT=600000
+
+    strategy:
+      matrix:
+        node_version: ["14"]
+        ruby_version: ["3.0"]
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: pnpm/action-setup@646cdf48217256a3d0b80361c5a50727664284f2
+      with:
+        version: 6.22.1
+    - uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node_version }}
+    - name: Node  v${{ matrix.node_version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node_version }}
+        cache: 'pnpm'
+        cache-dependency-path: |
+          pnpm-lock.yaml
+          plugins/pnpm-lock.yaml
+    - name: Pnpm install
+      run: |
+        pnpm install
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby_version }}
+        bundler-cache: true
+
+    - name: Tests
+      env:
+        CI: true
+        CHROME_URL: http://localhost:3000
+        RAILS_ENV: test
+        POSTGRES_USER: "postgres"
+        POSTGRES_PASSWORD: "password"
+        POSTGRES_PORT: "5432"
+      run: |
+        bundle exec rails db:schema:load
+        ./bin/lint
+        ./bin/brakeman
+        bundle exec rails assets:precompile
+        bundle exec rails test:all

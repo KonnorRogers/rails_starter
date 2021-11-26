@@ -1,24 +1,29 @@
 {
   "name": "cableready-test",
   "private": true,
-  "dependencies": {
-    "@rails/actioncable": "^6.0.0",
-    "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "5.4.3",
-    "cable_ready": "5.0.0-pre7",
-    "stimulus": "^3.0.1",
-    "stimulus_reflex": "3.5.0-pre7",
-    "turbolinks": "^5.2.0",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12"
-  },
   "version": "0.1.0",
-  "devDependencies": {
+  "dependencies": {
+    "@hotwired/turbo": "^7.0.1",
+    "@rails/actioncable": "^6.0.0",
+    "@shoelace-style/shoelace": "^2.0.0-beta.61",
+    "autoprefixer": "^10.4.0",
+    "cable_ready": "git+https://github.com/paramagicDev/cable_ready.git#chore/bundle-for-production",
+    "lit": "^2.0.2",
+    "mrujs": "^0.6.1",
+    "postcss": "^8.3.11",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^14.0.2",
+    "postcss-preset-env": "^7.0.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "stimulus": "^3.0.1",
     "stimulus-vite-helpers": "^1.0.4",
+    "stimulus_reflex": "3.5.0-pre7",
+    "vite-plugin-copy": "^0.1.6",
+    "vite-plugin-full-reload": "^0.2.2"
+  },
+  "devDependencies": {
+    "standard": "^16.0.4",
     "vite": "^2.6.13",
-    "vite-plugin-full-reload": "^0.2.2",
-    "vite-plugin-ruby": "^3.0.2",
-    "webpack-dev-server": "^3"
+    "vite-plugin-ruby": "^3.0.2"
   }
 }

@@ -9,15 +9,15 @@ default: &default
 
 development:
   <<: *default
-  database: cableready_development
+  database: rails_starter_development
 
 test:
   <<: *default
-  database: cableready_test
+  database: rails_starter_test
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: cableready_production
+  database: rails_starter_production
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 15 } %>
   url: <%= ENV["DATABASE_CONNECTION_POOL_URL"] || ENV["DATABASE_URL"] %>

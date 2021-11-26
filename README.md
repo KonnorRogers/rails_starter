@@ -1,6 +1,6 @@
 # README
 
-Rails 6.1 + CableReady 5 + StimulusReflex 3.5 + Vite Example Repo
+Rails 6.1 + CableReady 5 + StimulusReflex 3.5 + Vite
 
 ## Getting Started
 
@@ -8,7 +8,7 @@ Rails 6.1 + CableReady 5 + StimulusReflex 3.5 + Vite Example Repo
 git clone <TODO>
 cd <TODO>
 bundle install
-yarn install
+pnpm install
 ```
 
 In 3 different terminals run the following:
@@ -23,6 +23,7 @@ Then, run the following:
 
 ```bash
 bundle exec rails db:create
+bundle exec rails db:migrate
 ```
 
 Then navigate to localhost:3000 and you should be good to
