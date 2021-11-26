@@ -21,4 +21,20 @@ module ApplicationHelper
     output << content
     output.safe_concat("</#{wrapper_tag}>")
   end
+
+  def sl_tag(name, **options, &block)
+    tag.public_send("sl_#{name.to_s.underscore}".to_sym, **options, &block)
+  end
+
+  def to_id(model, symbol)
+    "#{model.class.name.underscore}_#{symbol}"
+  end
+
+  def to_name(model, symbol)
+    "#{model.class.name.underscore}[#{symbol}]"
+  end
+
+  def fetch_and_set(hash, key, default_value)
+    hash[key.to_sym] = hash.fetch(key, default_value)
+  end
 end

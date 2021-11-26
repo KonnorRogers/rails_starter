@@ -8,7 +8,7 @@
     <%= action_cable_meta_tag %>
 
     <%= vite_client_tag %>
-    <%= vite_javascript_tag 'application' %>
+    <%= vite_javascript_tag 'application', "data-turbo-track": "reload" %>
   </head>
 
   <body>

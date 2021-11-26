@@ -21,7 +21,7 @@ class ShoelaceFormBuilder < ActionView::Helpers::FormBuilder
       fetch_and_set(opts, :"toggle-password", true)
     end
 
-    @template.content_tag :"sl-input", options[:value], options
+    template_tag = @template.content_tag :"sl-input", options[:value], options
   end
 
   def submit(value, options = {})
@@ -34,8 +34,6 @@ class ShoelaceFormBuilder < ActionView::Helpers::FormBuilder
 
     @template.content_tag :"sl-button", options[:value], options
   end
-
-  private
 
   def fetch_and_set(hash, key, default_value)
     hash[key.to_sym] = hash.fetch(key, default_value)

@@ -13,7 +13,9 @@ export class AppFormGroup extends LitElement {
       ${normalize}
 
       :host {
+        display: block;
         width: 100%;
+        margin: 1em auto;
         padding: var(--padding);
       }
     `
@@ -50,13 +52,13 @@ export class AppFormGroup extends LitElement {
 function sizeHasChanged (_oldVal, newVal) {
   switch (newVal) {
     case 'small':
-      this.style.setProperty('--padding', '0.5em 0.25em')
+      this.style.setProperty('--padding', '0.5em')
       break
     case 'medium':
-      this.style.setProperty('--padding', '1em 0.25em')
+      this.style.setProperty('--padding', '1em 0.5em')
       break
     case 'large':
-      this.style.setProperty('--padding', '1.25em 0.25em')
+      this.style.setProperty('--padding', '1.25em 0.5em')
       break
   }
 }

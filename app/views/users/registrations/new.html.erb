@@ -8,15 +8,18 @@
   </app-form-group>
 
   <app-form-group>
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-      <small>(<%= @minimum_password_length %> characters minimum)</small>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", label: "" %>
+    <sl-input id="<%= to_id(resource, :password) %>" name="<%= to_name(resource, :password) %>"
+                                                     type="password" autocomplete="new-password">
+      <label slot="label">
+        Password
+        <% if @minimum_password_length %>
+          <small>(<%= @minimum_password_length %> characters minimum)</small><br />
+        <% end %>
+      </label>
+    </sl-input>
   </app-form-group>
 
   <app-form-group>
-    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </app-form-group>
 
