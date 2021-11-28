@@ -3,7 +3,6 @@ import { css } from 'lit'
 export const normalize = css`
   :host {
     position: relative;
-    box-sizing: border-box;
   }
 
   :host *,

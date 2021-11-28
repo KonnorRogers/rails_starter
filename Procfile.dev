@@ -1,0 +1,3 @@
+web: bundle exec rails s -p ${PORT:-3000}
+vite: bin/vite dev
+docker: docker-compose up

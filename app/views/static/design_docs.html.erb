@@ -8,4 +8,11 @@
       <%= render FlashComponent.new(type: type, message: "I'm a :#{type} flash!") %>
     </div>
   <% end %>
+
+  <h2 style="margin-bottom: 2rem;">Links!</h2>
+  <% ["default", "primary", "success", "neutral", "warning", "danger"].each do |type| %>
+    <app-link href="#" type="<%= type %>" style="margin: 0 1rem;">
+      <%= type %> link!
+    </app-link>
+  <% end %>
 </div>

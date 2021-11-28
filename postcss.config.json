@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    "postcss-import",
+    "postcss-flexbugs-fixes",
+    {
+      "postcss-present-env": {
+        "autoprefixer": {
+          "flexbox": "no-2009"
+        }
+      }
+    }
+  ]
+}
