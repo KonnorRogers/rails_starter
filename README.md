@@ -2,7 +2,13 @@
 
 Rails 6.1 + CableReady 5 + StimulusReflex 3.5 + Vite
 
-## Getting Started
+## Prerequisites
+
+- Ruby 3+
+- Docker (For redis / postgres)
+- PNPM
+
+## Installation
 
 ```bash
 git clone <TODO>
@@ -11,12 +17,10 @@ bundle install
 pnpm install
 ```
 
-In 3 different terminals run the following:
+## Getting Started
 
 ```bash
-bundle exec rails s
-./bin/vite dev
-docker-compose up # spins up Redis + Postgres in Docker
+overmind -f ./Procfile.dev
 ```
 
 Then, run the following:
@@ -28,5 +32,4 @@ bundle exec rails db:migrate
 
 Then navigate to localhost:3000 and you should be good to
 go.
-
 
