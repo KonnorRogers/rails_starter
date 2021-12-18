@@ -1,7 +1,7 @@
-<h2>Resend unlock instructions</h2>
+<h2><%= t("auth.resend_unlock") %></h2>
 
-<%= formoh70-k90_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<%= form_with(model: resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
 
   <%= f.form_group do %>
     <%= f.label :email %><br />
@@ -9,8 +9,8 @@
   <% end %>
 
   <%= f.button_group do %>
-    <%= f.submit "Resend unlock instructions" %>
+    <%= f.submit t("auth.resend_unlock") %>
   <% end %>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "users/shared/links" %>

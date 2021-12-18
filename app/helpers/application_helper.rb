@@ -39,7 +39,7 @@ module ApplicationHelper
     "#{resource.class.name.underscore}[#{symbol}]"
   end
 
-  def checked_attr(bool)
+  def checked_html(bool)
     bool ? "checked" : ""
   end
 end

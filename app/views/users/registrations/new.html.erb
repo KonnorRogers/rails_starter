@@ -12,9 +12,9 @@
                                                        type="password" autocomplete="new-password"
                                                        toggle-password>
       <label slot="label">
-        Password
+        <%= t("password") %>
         <% if @minimum_password_length %>
-          <small>(<%= @minimum_password_length %> characters minimum)</small><br />
+          <small>(<%= @minimum_password_length + " " + t("minimum_characters") %>)</small><br />
         <% end %>
       </label>
     </sl-input>

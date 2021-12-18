@@ -37,6 +37,7 @@ en:
   destroy: "Destroy"
   delete: "Delete"
   hello: "Hello"
+  password: "Password"
   read: "Read"
   update: "Update"
 
@@ -56,6 +57,7 @@ en:
     no_unlock: "Didn't receive unlock instructions?"
     password_change: "We're contacting you to notify you that your password has been changed."
     remember_me: "Remember me"
+    resend_unlock: "Resend unlock instructions"
     signup: "Sign up"
     sign_in_with: "Sign in with %{provider}"
     waiting_confirmation: "Currently waiting confirmation for"

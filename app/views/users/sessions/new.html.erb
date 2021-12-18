@@ -13,7 +13,7 @@
     <app-form-group>
       <input type="hidden" name="<%= form_name resource, :remember_me %>" value="0">
       <sl-checkbox value="1" name="<%= form_name resource, :remember_me %>"
-                   <%= checked_attr(resource.remember_me) %>>
+                   <%= checked_html(resource.remember_me) %>>
         <%= t("auth.remember_me") %>
       </sl-checkbox>
     </app-form-group>

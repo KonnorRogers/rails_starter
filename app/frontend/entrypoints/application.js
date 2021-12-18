@@ -5,8 +5,6 @@ import "@hotwired/turbo"
 import "../channels"
 import "../controllers"
 import "../components"
-import "../stylesheets/application.css"
-
 
 // Import all images
 const images = import.meta.globEager('../images/**/*');
