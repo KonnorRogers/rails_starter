@@ -30,4 +30,40 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  are_you_sure: "Are you sure?"
+  back: "Back"
+  create: "Create"
+  edit: "Edit"
+  destroy: "Destroy"
+  delete: "Delete"
+  hello: "Hello"
+  read: "Read"
+  update: "Update"
+
+  auth:
+    cancel: "Cancel my account"
+    change_password: "Change your password"
+    confirm_new_password: "Confirm new password"
+    confirm_via_link: "You can confirm your account email through the link below"
+    confirm_account: "Confirm my account"
+    current_password_prompt: "We need your current password to confirm your changes"
+    forgot_password: "Forgot your password?"
+    login: "Log in"
+    minimum_characters: "characters minimum"
+    new_password: "New password"
+    no_confirmation: "Didn't receive confirmation instructions?"
+    no_change: "Leave blank if you don't want to change it"
+    no_unlock: "Didn't receive unlock instructions?"
+    password_change: "We're contacting you to notify you that your password has been changed."
+    remember_me: "Remember me"
+    signup: "Sign up"
+    sign_in_with: "Sign in with %{provider}"
+    waiting_confirmation: "Currently waiting confirmation for"
+
+  email:
+    requested_password_change: "Someone has requested a link to change your password. You can do this through the link below."
+    requested_password_change_instruction: "If you didn't request this, please ignore this email. Your password won't change until you access the link above and create a new one."
+    welcome: "Welcome"
+
+
+

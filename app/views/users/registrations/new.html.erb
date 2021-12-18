@@ -1,15 +1,16 @@
-<h2>Sign up</h2>
+<h2><%= t("auth.signup") %></h2>
 
 <%= sl_form_with(model: resource, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= render "users/shared/error_messages", resource: resource %>
 
   <app-form-group>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </app-form-group>
 
   <app-form-group>
-    <sl-input id="<%= to_id(resource, :password) %>" name="<%= to_name(resource, :password) %>"
-                                                     type="password" autocomplete="new-password">
+    <sl-input id="<%= form_id(resource, :password) %>" name="<%= form_name(resource, :password) %>"
+                                                       type="password" autocomplete="new-password"
+                                                       toggle-password>
       <label slot="label">
         Password
         <% if @minimum_password_length %>
@@ -19,13 +20,11 @@
     </sl-input>
   </app-form-group>
 
-  <app-form-group>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </app-form-group>
-
   <sl-button-group>
-    <%= f.submit "Sign up" %>
+    <%= f.submit t("auth.signup") %>
   </sl-button-group>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div>
+  <%= render "users/shared/links" %>
+</div>

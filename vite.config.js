@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import RubyPlugin from 'vite-plugin-ruby'
-// import FullReload from 'vite-plugin-full-reload'
+import FullReload from 'vite-plugin-full-reload'
 import * as path from "path"
 import copy from 'rollup-plugin-copy';
 
@@ -10,6 +10,7 @@ const vitePath = `public/shoelace/assets`
  * @type {import('vite').UserConfig}
  */
 export default defineConfig({
+  clearScreen: false,
   plugins: [
     RubyPlugin(),
     copy({
@@ -21,6 +22,6 @@ export default defineConfig({
       ],
       hook: 'buildStart'
     }),
-    // FullReload(['config/routes.rb', 'app/views/**/*', 'app/reflexes/**/*', 'app/helpers/**/*'], {delay: 300})
+    FullReload(['config/routes.rb', 'app/views/**/*', 'app/reflexes/**/*', 'app/helpers/**/*'], {delay: 300})
   ],
 })

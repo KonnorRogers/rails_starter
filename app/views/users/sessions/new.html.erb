@@ -1,4 +1,4 @@
-<h2>Log in</h2>
+<h2><%= t("auth.login") %></h2>
 
 <%= sl_form_with(model: resource, url: session_path(resource_name)) do |f| %>
   <app-form-group>
@@ -11,14 +11,17 @@
 
   <% if devise_mapping.rememberable? %>
     <app-form-group>
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <input type="hidden" name="<%= form_name resource, :remember_me %>" value="0">
+      <sl-checkbox value="1" name="<%= form_name resource, :remember_me %>"
+                   <%= checked_attr(resource.remember_me) %>>
+        <%= t("auth.remember_me") %>
+      </sl-checkbox>
     </app-form-group>
   <% end %>
 
   <sl-button-group>
-    <%= f.submit "Log in" %>
+    <%= f.submit t("auth.login") %>
   </sl-button-group>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "users/shared/links" %>

@@ -1,5 +1,5 @@
-<p>Welcome <%= @email %>!</p>
+<p><%= "#{t('email.welcome')} #{@email}" %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p><%= t("auth.confirm_via_link") %></p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to t('auth.confirm_account'), confirmation_url(@resource, confirmation_token: @token) %></p>

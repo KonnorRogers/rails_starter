@@ -30,7 +30,7 @@ export const styles = css`
   /* Default */
   .link--default:active,
   .link--default {
-    color: var(--sl-color-neutral-900);
+    color: var(--sl-color-neutral-500);
     border-color: var(--sl-color-neutral-500);
   }
 

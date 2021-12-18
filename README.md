@@ -20,7 +20,7 @@ pnpm install
 ## Getting Started
 
 ```bash
-overmind -f ./Procfile.dev
+overmind start -f ./Procfile.dev
 ```
 
 Then, run the following:
