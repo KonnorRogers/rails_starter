@@ -1,9 +1,9 @@
-import ApplicationController from './application_controller'
+import { ApplicationController } from './application_controller'
 
 /* This is the custom StimulusReflex controller for the Example Reflex.
  * Learn more at: https://docs.stimulusreflex.com
  */
-export default class extends ApplicationController {
+export class ExampleController extends ApplicationController {
   /*
    * Regular Stimulus lifecycle methods
    * Learn more at: https://stimulusjs.org/reference/lifecycle-callbacks

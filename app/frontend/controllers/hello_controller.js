@@ -1,6 +1,6 @@
-// Visit The Stimulus Handbook for more details 
+// Visit The Stimulus Handbook for more details
 // https://stimulusjs.org/handbook/introduction
-// 
+//
 // This example controller works with specially annotated HTML like:
 //
 // <div data-controller="hello">
@@ -9,8 +9,12 @@
 
 import { Controller } from "stimulus"
 
-export default class extends Controller {
+export class HelloController extends Controller {
   static targets = [ "output" ]
+
+  static get name () {
+    return "hello"
+  }
 
   connect() {
     this.outputTarget.textContent = 'Hello, Stimulus!'

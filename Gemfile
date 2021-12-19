@@ -6,7 +6,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "~> 3.0.0"
 
 gem "rails", "~> 6.1.3" # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-
 gem "action_policy", "~> 0.5" # Authorization
 gem "bootsnap", "~> 1.4", require: false # Reduces boot times through caching; required in config/boot.rb
 gem "cable_ready", "~> 5.0.0.pre7"
@@ -26,8 +25,9 @@ gem "redis", "~> 4.0" # Use Redis adapter to run Action Cable in production
 gem "redis-session-store", "~> 0.11" # Session store...for Redis
 gem "turbo-rails", "~> 0.8.3" # Turbo helpers
 gem "tzinfo-data", "~> 1.0", platforms: %i[mingw mswin x64_mingw jruby]
+
 gem "view_component", "~> 2.45"
-gem "vite_rails", "~> 3.0" # Transpile app-like JavaScript
+gem "asset_mapper", github: "paramagicdev/asset_mapper"
 
 
 group :development do

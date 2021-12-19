@@ -2,6 +2,9 @@
   "name": "cableready-test",
   "private": true,
   "version": "0.1.0",
+  "scripts": {
+    "build": "rm -rf public/build && node esbuild.js"
+  },
   "dependencies": {
     "@esm-bundle/chai": "^4.3.4-fix.0",
     "@hotwired/turbo": "^7.0.1",
@@ -17,16 +20,13 @@
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.0.2",
     "postcss-preset-env": "^7.0.1",
-    "rollup-plugin-copy": "^3.4.0",
     "stimulus": "^3.0.1",
-    "stimulus-vite-helpers": "^1.0.4",
-    "stimulus_reflex": "3.5.0-pre7",
-    "vite-plugin-copy": "^0.1.6",
-    "vite-plugin-full-reload": "^0.2.2"
+    "stimulus_reflex": "3.5.0-pre7"
   },
   "devDependencies": {
-    "standard": "^16.0.4",
-    "vite": "^2.6.13",
-    "vite-plugin-ruby": "^3.0.2"
+    "esbuild": "^0.14.5",
+    "esbuild-plugin-manifest": "^0.5.0",
+    "esbuild-rails": "^1.0.3",
+    "standard": "^16.0.4"
   }
 }

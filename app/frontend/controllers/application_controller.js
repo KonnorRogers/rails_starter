@@ -12,7 +12,7 @@ import StimulusReflex from 'stimulus_reflex'
  *
  * Learn more at: https://docs.stimulusreflex.com
  */
-export default class extends Controller {
+export class ApplicationController extends Controller {
   connect () {
     StimulusReflex.register(this)
   }

@@ -1,17 +1,21 @@
 // Load all the controllers within this directory and all subdirectories.
 // Controller files must be named *_controller.js.
 
-import { Application } from "stimulus"
 import StimulusReflex from 'stimulus_reflex'
-import { registerControllers } from 'stimulus-vite-helpers'
 import consumer from '../channels/consumer'
-import controller from '../controllers/application_controller'
 import CableReady from 'cable_ready'
 
+import { Application } from 'stimulus'
+import { ApplicationController } from './application_controller'
+import { HelloController } from './hello_controller'
+import { ExampleController } from './example_controller'
+
 const application = Application.start()
-const controllers = import.meta.globEager('./**/*_controller.js')
-registerControllers(application, controllers)
 application.consumer = consumer
-StimulusReflex.initialize(application, { controller, isolate: true })
+
+application.register('hello', HelloController)
+application.register('example', ExampleController)
+
+StimulusReflex.initialize(application, { controller: ApplicationController, isolate: true })
 StimulusReflex.debug = import.meta.env.DEV
 CableReady.initialize({ consumer })
