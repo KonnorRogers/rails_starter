@@ -1,16 +1,27 @@
-<h2>Resend confirmation instructions</h2>
+<style>
+  sl-button-group:part(base) {
+    justify-content: center;
+  }
+</style>
 
-<%= sl_form_with(model: resource, url: confirmation_path(resource_name), method: :post }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+<app-container style="margin-top: var(--sl-spacing-4x-large);">
+  <sl-card style="width: 100%;">
+    <h2 slot="header"><%= t("auth.resend_confirmation") %></h2>
 
-  <app-form-group>
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
-  </app-form-group>
+    <%= sl_form_with(model: resource, url: confirmation_path(resource_name), method: :post) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
 
-  <sl-button-group>
-    <%= f.submit "Resend confirmation instructions" %>
-  </sl-button-group>
-<% end %>
+      <app-form-group>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+      </app-form-group>
 
-<%= render "users/shared/links" %>
+      <sl-button-group style="margin: 0 auto;">
+        <%= f.submit t("auth.resend_confirmation") %>
+      </sl-button-group>
+    <% end %>
+
+    <div slot="footer">
+      <%= render "users/shared/links" %>
+    </div>
+  </sl-card>
+</app-container>

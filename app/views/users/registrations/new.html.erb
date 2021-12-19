@@ -14,7 +14,7 @@
       <label slot="label">
         <%= t("password") %>
         <% if @minimum_password_length %>
-          <small>(<%= @minimum_password_length + " " + t("minimum_characters") %>)</small><br />
+          <small>(<%= "#{@minimum_password_length} #{t("auth.minimum_characters")}" %>)</small><br />
         <% end %>
       </label>
     </sl-input>

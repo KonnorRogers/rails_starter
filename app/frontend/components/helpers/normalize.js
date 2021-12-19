@@ -1,10 +1,6 @@
 import { css } from 'lit'
 
 export const normalize = css`
-  :host {
-    position: relative;
-  }
-
   :host *,
   :host *::before,
   :host *::after {
@@ -19,4 +15,3 @@ export const normalize = css`
     cursor: pointer;
   }
 `
-
