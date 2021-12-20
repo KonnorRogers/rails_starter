@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/paramagicdev/asset_mapper.git
-  revision: e763c929ac85ccf8a824d9fa09cf73eadf3f50be
+  revision: 7a97abdb654b47ca17146adad9c9b44230b8df10
   specs:
     asset_mapper (0.0.1)
       dry-configurable (~> 0.13.0)
