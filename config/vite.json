@@ -5,6 +5,7 @@
   },
   "development": {
     "autoBuild": true,
+    "host": "127.0.0.1",
     "publicOutputDir": "vite-dev",
     "port": 3036
   },

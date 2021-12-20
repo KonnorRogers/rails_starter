@@ -4,12 +4,11 @@
   <%= render "users/shared/error_messages", resource: resource %>
 
   <app-form-group>
-    <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </app-form-group>
 
   <sl-button-group>
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit t("auth.send_reset_instructions") %>
   </sl-button-group>
 <% end %>
 

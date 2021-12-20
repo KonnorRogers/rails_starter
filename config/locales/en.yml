@@ -59,6 +59,7 @@ en:
     remember_me: "Remember me"
     resend_confirmation: "Resend confirmation instructions"
     resend_unlock: "Resend unlock instructions"
+    send_reset_instructions: Send me reset password instructions
     signup: "Sign up"
     sign_in_with: "Sign in with %{provider}"
     waiting_confirmation: "Currently waiting confirmation for"
