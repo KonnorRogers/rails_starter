@@ -1,19 +1,24 @@
 const esbuild = require('esbuild')
 const rails = require('esbuild-rails')
-const manifestPlugin = require('esbuild-plugin-manifest')
 const fs = require('fs')
 const path = require('path')
 
 // Add additional file loaders here.
-const fileLoaderExtensions = [".png", ".svg", ".jpg", ".jpeg", ".webp", ".woff"];
-const fileLoaders = {};
-fileLoaderExtensions.forEach((ext) => fileLoaders[ext] = "file");
+const fileLoaderExtensions = ['.png', '.svg', '.jpg', '.jpeg', '.webp', '.woff']
+const fileLoaders = {}
+fileLoaderExtensions.forEach((ext) => fileLoaders[ext] = 'file')
 
-(async () => {
-  const outdir = path.join(process.cwd(), 'public/build')
+const publicDir = 'public'
+const publicPath = '/build'
+const buildDir = `${publicDir}${publicPath}`
+const outdir = path.join(process.cwd(), buildDir)
+const mappings = {}
+
+;(async () => {
   const result = await esbuild.build({
     entryPoints: ['app/frontend/application.js'],
-    assetNames: 'assets/[dir]/[name]-[hash]',
+    entryNames: '[dir]/[name]-[hash]',
+    assetNames: '[dir]/[name]-[hash]',
     chunkNames: 'chunks/[name]-[hash]',
     metafile: true,
     bundle: true,
@@ -37,15 +42,26 @@ fileLoaderExtensions.forEach((ext) => fileLoaders[ext] = "file");
 
     // Used in conjunction with the file loader. This will prepend to all file routes.
     // https://esbuild.github.io/api/#public-path
-    publicPath: "/build",
-    plugins: [rails(), manifestPlugin()]
+    publicPath,
+    plugins: [rails()]
   })
 
-  // console.log(result.metafile.outputs)
-  for (const k in result.metafile.outputs) {
-    // const value = result.metafile.outputs[k]
-    console.log(k)
+  for (const outputFile in result.metafile.outputs) {
+    let inputFile = outputFile.replace(/-[A-Z0-9]{8}/, '')
+    inputFile = inputFile.replace(`${buildDir}/`, '')
+    const outputFileWithoutPublicDir = outputFile.replace(publicDir, '')
+    console.log({ inputFile, outputFile: outputFileWithoutPublicDir })
+    addMapping(inputFile, outputFileWithoutPublicDir)
   }
 
+  fs.writeFileSync(`${outdir}/manifest.json`, JSON.stringify(mappings, null, 2))
   fs.writeFileSync(`${outdir}/meta.json`, JSON.stringify(result.metafile))
 })()
+
+function addMapping (input, output) {
+  if (mappings[input] != null) {
+    throw new Error(`There is a conflicting manifest key for '"${input}"'.`)
+  }
+
+  mappings[input] = output
+}

@@ -5,6 +5,7 @@ import "@hotwired/turbo"
 import "./channels"
 import "./controllers"
 import "./components"
+import "./stylesheets/application.css"
 
 // Import all images
 
@@ -12,9 +13,10 @@ import "./components"
 // const images = import.meta.globEager('../images/**/*');
 
 // ESBuild
-// import "../images/**/*.*"
-import image from "./images/annotation.svg"
-console.log(image)
+import images from "./images/**/*.*"
+if (images != null) {
+ // circumvent treeshaking
+}
 
 // Parcel
 

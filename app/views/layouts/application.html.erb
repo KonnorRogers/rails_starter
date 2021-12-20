@@ -7,9 +7,11 @@
     <%= csp_meta_tag %>
     <%= action_cable_meta_tag %>
 
-    <%= vite_client_tag %>
-    <%= vite_stylesheet_tag 'application', data: { "turbo-track": "reload" } %>
-    <%= vite_javascript_tag 'application', data: { "turbo-track": "reload" } %>
+    <%# <%= vite_client_tag %1> %>
+    <%# <%= vite_stylesheet_tag 'application', data: { "turbo-track": "reload" } %1> %>
+    <%# <%= vite_javascript_tag 'application', data: { "turbo-track": "reload" } %1> %>
+    <link href="<%= AssetMapper.find("application.css") %>" rel="stylesheet">
+    <script src="<%= AssetMapper.find("application.js") %>"></script>
   </head>
 
   <body>

@@ -17,5 +17,5 @@ application.register('hello', HelloController)
 application.register('example', ExampleController)
 
 StimulusReflex.initialize(application, { controller: ApplicationController, isolate: true })
-StimulusReflex.debug = import.meta.env.DEV
+StimulusReflex.debug = process.env.NODE_ENV === "development"
 CableReady.initialize({ consumer })
