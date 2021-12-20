@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "build": "rm -rf public/build && node esbuild.js"
+    "copy-icons": "mkdir -p public/shoelace && cp -R node_modules/@shoelace-style/shoelace/dist/assets public/shoelace/",
+    "build": "rm -rf public/build public/shoelace && pnpm run copy-icons && node esbuild.js"
   },
   "dependencies": {
     "@esm-bundle/chai": "^4.3.4-fix.0",

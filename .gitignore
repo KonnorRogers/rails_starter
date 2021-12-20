@@ -28,6 +28,7 @@
 
 /public/assets
 /public/build
+/public/shoelace
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
