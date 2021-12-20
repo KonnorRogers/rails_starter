@@ -40,6 +40,7 @@ yarn-debug.log*
 .yarn-integrity
 
 # Vite Ruby
+/public/shoelace
 /public/vite
 /public/vite-dev
 /public/vite-test
