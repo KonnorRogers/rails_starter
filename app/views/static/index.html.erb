@@ -1,12 +1,23 @@
-<h1>Static#index</h1>
-<p>Find me in app/views/static/index.html.erb</p>
+<app-container style="margin-top: var(--sl-spacing-4x-large);">
+  <sl-card>
+    <h1 slot="header">Welcome to your new app!</h1>
+    <p>Feel free to play around!</p>
 
-<div>
-  <%= link_to "Sign up", sign_up_path %>
-</div>
+    <div slot="footer">
+      <% if user_signed_in? %>
+        <%= render "users/logout" %>
+      <% else %>
+        <%= render "users/login" %>
+        <br>
+        <%= render "users/signup" %>
+      <% end %>
 
-<div>
-  <%= link_to "Login", login_path %>
-</div>
-
-
+      <% if Rails.env.development? %>
+        <br>
+        <app-link href="<%= __design_docs_path %>">
+          Design docs
+        </app-link>
+      <% end %>
+    </div>
+  </sl-card>
+</app-container>

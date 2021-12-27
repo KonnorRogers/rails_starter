@@ -8,50 +8,40 @@ export const styles = css`
   :host {
     display: inline-block;
     cursor: pointer;
+    padding: 0.15em 0.25em;
   }
 
   .link {
-    display: inherit;
-    width: 100%;
+    display: inline-block;
     border-width: var(--sl-input-border-width);
     font-family: var(--sl-input-font-family);
     font-weight: var(--sl-font-weight-semibold);
     user-select: none;
     text-decoration: none;
     cursor: inherit;
-    border-bottom: 1px solid transparent;
     transition: var(--sl-transition-fast) background-color, var(--sl-transition-fast) color,
       var(--sl-transition-fast) border, var(--sl-transition-fast) box-shadow;
 
-    padding-bottom: 2px;
-    margin-bottom: -2px;
-  }
+    --border-width: 2px;
 
-  /* Default */
-  .link--default:active,
-  .link--default {
-    color: var(--sl-color-neutral-500);
-    border-color: var(--sl-color-neutral-500);
-  }
-
-  .link--default:focus,
-  .link--default:hover {
-    color: var(--sl-color-primary-500);
-    border-color: var(--sl-color-primary-500);
+    border-bottom: var(--border-width) solid transparent;
+    padding-bottom: var(--border-width);
+    margin-bottom: calc(var(--border-width) * -1);
   }
 
   /* Primary */
-  .link--primary:active,
-  .link--primary {
+  .link--default:active,
+  .link--default {
     border-color: var(--sl-color-primary-600);
     color: var(--sl-color-primary-600);
   }
 
-  .link--primary:focus,
-  .link--primary:hover {
-    border-color: var(--sl-color-primary-500);
-    color: var(--sl-color-primary-500);
+  .link--default:focus,
+  .link--default:hover {
+    border-color: var(--sl-color-primary-700);
+    color: var(--sl-color-primary-700);
   }
+
 
   /* Success */
   .link--success:active,
@@ -62,7 +52,8 @@ export const styles = css`
 
   .link--success:focus,
   .link--success:hover {
-    color: var(--sl-color-success-500);
+    color: var(--sl-color-success-700);
+    border-color: var(--sl-color-success-700);
   }
 
   /* Neutral */
@@ -74,7 +65,8 @@ export const styles = css`
 
   .link--neutral:focus,
   .link--neutral:hover {
-    color: var(--sl-color-neutral-500);
+    color: var(--sl-color-neutral-800);
+    border-color: var(--sl-color-neutral-800);
   }
 
   /* Warning */
@@ -86,7 +78,8 @@ export const styles = css`
 
   .link--warning:focus,
   .link--warning:hover {
-    color: var(--sl-color-warning-500);
+    color: var(--sl-color-warning-700);
+    border-color: var(--sl-color-warning-700);
   }
 
   /* Danger */
@@ -98,6 +91,7 @@ export const styles = css`
 
   .link--danger:focus,
   .link--danger:hover {
-    color: var(--sl-color-danger-500);
+    color: var(--sl-color-danger-700);
+    border-color: var(--sl-color-danger-700);
   }
 `

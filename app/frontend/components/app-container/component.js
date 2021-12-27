@@ -24,7 +24,7 @@ export class AppContainer extends LitElement {
         width: var(--width);
       }
 
-      app-container--extra-small {
+      app-container--x-small {
         --max-width: 400px;
       }
 
@@ -40,7 +40,7 @@ export class AppContainer extends LitElement {
         --max-width: 1024px;
       }
 
-      app-container--extra-large {
+      app-container--x-large {
         --max-width: 1280px;
       }
     `
@@ -56,11 +56,11 @@ export class AppContainer extends LitElement {
     return html`
       <div class=${classMap({
         'app-container': true,
-        'app-container--extra-small': this.size === 'extra-small',
+        'app-container--x-small': this.size === 'x-small',
         'app-container--small': this.size === 'small',
         'app-container--medium': this.size === 'medium',
         'app-container--large': this.size === 'large',
-        'app-container--extra-large': this.size === 'extra-large'
+        'app-container--x-large': this.size === 'x-large'
       })} part="base">
         <slot></slot>
       </div>

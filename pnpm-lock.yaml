@@ -10,7 +10,7 @@ specifiers:
   autoprefixer: ^10.4.0
   cable_ready: git+https://github.com/paramagicDev/cable_ready.git#chore/bundle-for-production
   lit: ^2.0.2
-  mrujs: ^0.7.2
+  mrujs: ^0.7.4
   postcss: ^8.4.5
   postcss-flexbugs-fixes: ^5.0.2
   postcss-import: ^14.0.2
@@ -35,7 +35,7 @@ dependencies:
   autoprefixer: 10.4.0_postcss@8.4.5
   cable_ready: github.com/paramagicDev/cable_ready/464c353f5c6a2db2190e80464ae00f453a6d6f70
   lit: 2.0.2
-  mrujs: 0.7.2
+  mrujs: 0.7.4
   postcss: 8.4.5
   postcss-flexbugs-fixes: 5.0.2_postcss@8.4.5
   postcss-import: 14.0.2_postcss@8.4.5
@@ -2543,8 +2543,8 @@ packages:
     resolution: {integrity: sha512-Y8YRbAEP3eKykroIBWrjcfMw7mmwJfjhqdpSvoqinu8Y702nAwikpXcNFDiIkyvfCLxLM9Wu95RZqo4a9jFBaA==}
     dev: false
 
-  /mrujs/0.7.2:
-    resolution: {integrity: sha512-k6zHbDn9xImDdVIOAbGDqfbLahh1LjeP1RhNNyuO05ZPKHrpoCTsZsV9ODGMKRtCbxG9Bj9wFE0R2QIqxz4hWA==}
+  /mrujs/0.7.4:
+    resolution: {integrity: sha512-IdFK+yIvGa0CuPFEPyMKbPYm8ZAIlW49INqHKKy/n8b1y/yDOZ/8kg7i1s1/0EyQHxQonzbHL/M1Pt35opNZNg==}
     dependencies:
       morphdom: 2.6.1
     dev: false

@@ -13,7 +13,7 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # DELETE /users/sign_out
+  # DELETE /users/logout
   # def destroy
   #   super
   # end

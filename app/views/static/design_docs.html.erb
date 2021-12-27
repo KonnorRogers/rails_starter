@@ -1,18 +1,40 @@
-<div>
-  <h2 style="margin-bottom: 2rem;">Flashes!</h2>
-  <% FlashComponent::ICONS.each do |type, _| %>
+<app-container>
+  <h2 id="flashes"><app-link href="#flashes">Flashes!</app-link></h2>
+  <% ApplicationController._flash_types.each do |type| %>
     <div style="margin-bottom: 3rem;">
       <p>
-        <%= "render FlashComponent.new(type: :#{type}, message: <string>)" %>
+        <code><%= "render FlashComponent.new(variant: :#{type}, message: <string>)" %></code>
       </p>
-      <%= render FlashComponent.new(type: type, message: "I'm a :#{type} flash!") %>
+      <%= render FlashComponent.new(variant: type, message: "I'm a :#{type} flash!") %>
     </div>
   <% end %>
 
-  <h2 style="margin-bottom: 2rem;">Links!</h2>
-  <% ["default", "primary", "success", "neutral", "warning", "danger"].each do |type| %>
-    <app-link href="#" type="<%= type %>" style="margin: 0 1rem;">
-      <%= type %> link!
-    </app-link>
+  <h2 id="links" style="margin-top: 2rem;"><app-link href="#links">Links!</app-link></h2>
+  <% ["default", "success", "neutral", "warning", "danger"].each do |type| %>
+    <div id="<%= "link-#{type}" %>" style="display: flex; flex-direction: column;">
+      <p>
+        <code><%= "<app-link href='#link-#{type}' type='#{type}'> #{type} link </app-link> "%></code>
+      </p>
+      <app-link href="<%= "#link-#{type}" %>" type="<%= type %>" style="margin: 0 1rem 1rem; width: auto;">
+        <%= type %> link!
+      </app-link>
+    </div>
   <% end %>
-</div>
+
+  <h2 id="containers" style="margin-top: 2rem;"><app-link href="#containers">Containers</app-link></h2>
+  <% container_sizes = {
+    "default" => "1536px",
+    "x-small" => "400px",
+    "small" => "640px",
+    "medium" => "768px",
+    "large" => "1028px",
+    "x-large" => "1280px",
+  } %>
+  <% container_sizes.each do |size, max_width| %>
+    <p style="margin-bottom: 2rem;">
+      <%= "max-width: #{max_width};" %>
+      <br>
+      <code><%= "<app-container size='#{size}'></app-container>" %></code>
+    </p>
+  <% end %>
+</app-container>

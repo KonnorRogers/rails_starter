@@ -1,30 +1,33 @@
-<h2><%= t("auth.signup") %></h2>
+<app-container style="margin-top: var(--sl-spacing-4x-large);">
+  <sl-card>
+    <h2 slot="header"><%= t("auth.signup") %></h2>
 
-<%= sl_form_with(model: resource, url: registration_path(resource_name)) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+    <%= render "users/shared/error_messages", resource: resource %>
+    <%= sl_form_with(model: resource, url: registration_path(resource_name)) do |f| %>
+      <app-form-group>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </app-form-group>
 
-  <app-form-group>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </app-form-group>
+      <app-form-group>
+        <sl-input id="<%= form_id(resource, :password) %>" name="<%= form_name(resource, :password) %>"
+                                                          type="password" autocomplete="new-password"
+                                                          toggle-password>
+          <label slot="label">
+            <%= t("password") %>
+            <% if @minimum_password_length %>
+              <small>(<%= "#{@minimum_password_length} #{t("auth.minimum_characters")}" %>)</small><br />
+            <% end %>
+          </label>
+        </sl-input>
+      </app-form-group>
 
-  <app-form-group>
-    <sl-input id="<%= form_id(resource, :password) %>" name="<%= form_name(resource, :password) %>"
-                                                       type="password" autocomplete="new-password"
-                                                       toggle-password>
-      <label slot="label">
-        <%= t("password") %>
-        <% if @minimum_password_length %>
-          <small>(<%= "#{@minimum_password_length} #{t("auth.minimum_characters")}" %>)</small><br />
-        <% end %>
-      </label>
-    </sl-input>
-  </app-form-group>
+      <sl-button-group>
+        <%= f.submit t("auth.signup") %>
+      </sl-button-group>
+    <% end %>
 
-  <sl-button-group>
-    <%= f.submit t("auth.signup") %>
-  </sl-button-group>
-<% end %>
-
-<div>
-  <%= render "users/shared/links" %>
-</div>
+    <div slot="footer">
+      <%= render "users/shared/links" %>
+    </div>
+  </sl-card>
+</app-container>

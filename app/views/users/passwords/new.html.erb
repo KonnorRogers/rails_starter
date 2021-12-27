@@ -1,15 +1,21 @@
-<h2><%= t("auth.forgot_password") %></h2>
+<app-container style="margin-top: var(--sl-spacing-4x-large);">
+  <sl-card>
+    <h2 slot="header"><%= t("auth.forgot_password") %></h2>
 
-<%= sl_form_with(model: resource, url: password_path(resource_name), method: :post) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+    <%= sl_form_with(model: resource, url: password_path(resource_name), method: :post) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
 
-  <app-form-group>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </app-form-group>
+      <app-form-group>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </app-form-group>
 
-  <sl-button-group>
-    <%= f.submit t("auth.send_reset_instructions") %>
-  </sl-button-group>
-<% end %>
+      <sl-button-group>
+        <%= f.submit t("auth.send_reset_instructions") %>
+      </sl-button-group>
+    <% end %>
 
-<%= render "users/shared/links" %>
+    <div slot="footer">
+      <%= render "users/shared/links" %>
+    </div>
+  </sl-card>
+</app-container>

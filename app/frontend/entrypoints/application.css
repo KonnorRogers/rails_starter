@@ -13,3 +13,7 @@
 button {
   cursor: pointer;
 }
+
+sl-card {
+  width: 100%;
+}

@@ -28,7 +28,6 @@ export class AppLink extends LitElement {
   static get types () {
     return [
       'default',
-      'primary',
       'success',
       'neutral',
       'warning',

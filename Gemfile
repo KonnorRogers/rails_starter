@@ -7,6 +7,7 @@ ruby "~> 3.0.0"
 
 gem "rails", "~> 6.1.3" # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
+gem "all_futures", github: "leastbad/all_futures"
 gem "action_policy", "~> 0.5" # Authorization
 gem "bootsnap", "~> 1.4", require: false # Reduces boot times through caching; required in config/boot.rb
 gem "cable_ready", "~> 5.0.0.pre7"
@@ -18,6 +19,7 @@ gem "dry-initializer-rails", "~> 3.1" # Allow initializers to take in ActiveReco
 
 gem "image_processing", "~> 1.2" # Use Active Storage variant
 gem "jbuilder", "~> 2.7" # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem "kredis", "~> 1.0"
 gem "oauth2", "~> 1.4" # OAuth...duh
 gem "pg", "~> 1.1" # Use postgresql as the database for Active Record
 gem "puma", "~> 5.0" # Use Puma as the app server
@@ -28,7 +30,6 @@ gem "turbo-rails", "~> 0.8.3" # Turbo helpers
 gem "tzinfo-data", "~> 1.0", platforms: %i[mingw mswin x64_mingw jruby]
 gem "view_component", "~> 2.45"
 gem "vite_rails", "~> 3.0" # Transpile app-like JavaScript
-
 
 group :development do
   gem "brakeman", "~> 5.0", require: false # Security
@@ -49,3 +50,5 @@ group :test do
   gem "faker", "~> 2.16", ">= 2.16"
   gem "webmock", "~> 3" # Mock HTTP calls
 end
+
+gem "sidekiq", "~> 6.3"

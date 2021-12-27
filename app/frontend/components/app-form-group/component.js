@@ -26,15 +26,15 @@ export class AppFormGroup extends LitElement {
       }
 
       .form-group--small {
-        padding: 0.5em;
+        padding: 0.5em 0;
       }
 
       .form-group--medium {
-        padding: 0.75em 0.5em;
+        padding: 0.75em 0;
       }
 
       .form-group--large {
-        padding: 1.25em 0.5em;
+        padding: 1.25em 0;
       }
     `
   }
