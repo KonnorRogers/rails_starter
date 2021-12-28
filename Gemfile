@@ -7,6 +7,7 @@ ruby "~> 3.0.0"
 
 gem "rails", "~> 6.1.3" # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
+gem "anyway_config", "~> 2.0" # Configuration for the modern world.
 gem "all_futures", github: "leastbad/all_futures"
 gem "action_policy", "~> 0.5" # Authorization
 gem "bootsnap", "~> 1.4", require: false # Reduces boot times through caching; required in config/boot.rb
@@ -23,6 +24,7 @@ gem "kredis", "~> 1.0"
 gem "oauth2", "~> 1.4" # OAuth...duh
 gem "pg", "~> 1.1" # Use postgresql as the database for Active Record
 gem "puma", "~> 5.0" # Use Puma as the app server
+gem "sidekiq", "~> 6.3"
 gem "stimulus_reflex", "~> 3.5.0.pre7"
 gem "redis", "~> 4.0" # Use Redis adapter to run Action Cable in production
 gem "redis-session-store", "~> 0.11" # Session store...for Redis
@@ -50,5 +52,3 @@ group :test do
   gem "faker", "~> 2.16", ">= 2.16"
   gem "webmock", "~> 3" # Mock HTTP calls
 end
-
-gem "sidekiq", "~> 6.3"

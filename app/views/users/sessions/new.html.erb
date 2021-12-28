@@ -2,6 +2,7 @@
   <sl-card>
     <h2 slot="header"><%= t("auth.login") %></h2>
 
+    <%= render "users/shared/error_messages", resource: resource %>
     <%= sl_form_with(model: resource, url: session_path(resource_name)) do |f| %>
       <app-form-group>
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

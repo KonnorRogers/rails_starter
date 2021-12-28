@@ -49,3 +49,6 @@ node_modules
 .DS_Store
 yarn.lock
 .parcel-cache
+
+/config/*.local.yml
+/config/credentials/local.*

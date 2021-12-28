@@ -23,7 +23,7 @@ class FlashComponent < ApplicationComponent
     when /alert/i
       str = "warning"
     when /notice/i
-      str = "info"
+      str = "primary"
     when /error/i
       str = "danger"
     end

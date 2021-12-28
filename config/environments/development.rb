@@ -22,7 +22,7 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
-  config.cache_store = :redis_cache_store, {url: ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" }}
+  config.cache_store = :redis_cache_store, {url: RedisConfig.new.url}
   config.session_store :cache_store, key: "_sessions_development", compress: true, pool_size: 5, expire_after: 1.year
 
   # Enable/disable caching. By default caching is disabled.

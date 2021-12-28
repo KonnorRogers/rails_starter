@@ -1,0 +1,10 @@
+development: &development
+  user: postgres
+  password: password
+  host: localhost
+  port: 6000
+
+test:
+  <<: *development
+
+production:

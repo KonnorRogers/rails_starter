@@ -24,4 +24,13 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
+  private
+
+  def respond_to_on_destroy
+    respond_to do |format|
+      format.any(*navigational_formats) { redirect_to after_sign_out_path_for(resource_name), status: 303 }
+      format.all { head :no_content }
+    end
+  end
 end

@@ -78,6 +78,8 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    anyway_config (2.2.2)
+      ruby-next-core (>= 0.11.0)
     ast (2.4.2)
     bcrypt (3.1.16)
     bindex (0.8.1)
@@ -334,6 +336,7 @@ PLATFORMS
 DEPENDENCIES
   action_policy (~> 0.5)
   all_futures!
+  anyway_config (~> 2.0)
   bootsnap (~> 1.4)
   brakeman (~> 5.0)
   byebug

@@ -1,23 +1,21 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool:     <%= ENV.fetch("RAILS_MAX_THREADS") { 15 } %>
-  username: <%= ENV.fetch("POSTGRES_USER")     { "postgres" }  %>
-  password: <%= ENV.fetch("POSTGRES_PASSWORD") { "password" } %>
-  host:     <%= ENV.fetch("POSTGRES_HOST")     { "localhost" } %>
-  port:     <%= ENV.fetch("POSTGRES_PORT")     { 6000 } %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 15 } %>
 
-development:
+development: &development
   <<: *default
+  username: <%= PostgresConfig.new.user %>
+  password: <%= PostgresConfig.new.password %>
+  host:     <%= PostgresConfig.new.host %>
+  port:     <%= PostgresConfig.new.port %>
   database: rails_starter_development
 
 test:
-  <<: *default
+  <<: *development
   database: rails_starter_test
 
 production:
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: rails_starter_production
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 15 } %>
   url: <%= ENV["DATABASE_CONNECTION_POOL_URL"] || ENV["DATABASE_URL"] %>

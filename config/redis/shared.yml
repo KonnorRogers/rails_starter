@@ -1,0 +1,17 @@
+default: &default
+  url: <%= RedisConfig.new.url %>
+  timeout: <%= RedisConfig.new.timeout %>
+
+production:
+  <<: *default
+
+development:
+  <<: *default
+
+  # You can also specify host, port, and db instead of url
+  # host: <%= ENV.fetch("REDIS_SHARED_HOST", "127.0.0.1") %>
+  # port: <%= ENV.fetch("REDIS_SHARED_PORT", "6379") %>
+  # db: <%= ENV.fetch("REDIS_SHARED_DB", "11") %>
+
+test:
+  <<: *default

@@ -15,10 +15,12 @@
   <body>
     <div>
       <% flash.each do |type, message| %>
-        <%= render FlashComponent.new(variant: type, message: message) %>
+        <%= render FlashComponent.new(variant: type, message: message, duration: 3_000) %>
       <% end %>
     </div>
 
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
