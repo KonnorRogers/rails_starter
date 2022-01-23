@@ -13,12 +13,14 @@ import "./stylesheets/application.css"
 // const images = import.meta.globEager('../images/**/*');
 
 // ESBuild
-import images from "./images/**/*.*"
-if (images != null) {
- // circumvent treeshaking
-}
+// import * as images from "./images/**/*.*"
 
 // Parcel
+// import * as images from '../images/**/*.*'
+
+// if (images != null) {
+ // circumvent treeshaking
+// }
 
 
 ActiveStorage.start()

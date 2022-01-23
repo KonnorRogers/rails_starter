@@ -1,4 +1,4 @@
-@import '@shoelace-style/shoelace/dist/themes/light.css';
+@import 'npm:@shoelace-style/shoelace/dist/themes/light.css';
 
 *,
 *::before,

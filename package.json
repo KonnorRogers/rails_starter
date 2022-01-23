@@ -3,12 +3,16 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
+    "parcel": "parcel",
     "copy-icons": "mkdir -p public/shoelace && cp -R node_modules/@shoelace-style/shoelace/dist/assets public/shoelace/",
-    "build": "rm -rf public/build public/shoelace && pnpm run copy-icons && node esbuild.js"
+    "build": "rm -rf public/build public/shoelace && pnpm run copy-icons && node parcel.mjs"
   },
   "dependencies": {
     "@esm-bundle/chai": "^4.3.4-fix.0",
     "@hotwired/turbo": "^7.0.1",
+    "@parcel/config-default": "2.2.1",
+    "@parcel/core": "2.2.1",
+    "@parcel/reporter-cli": "2.2.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^7.0.0",
     "@shoelace-style/shoelace": "^2.0.0-beta.61",
@@ -17,6 +21,7 @@
     "cable_ready": "https://github.com/cableready/dev-builds/archive/refs/tags/cable_ready/1bded05.tar.gz",
     "lit": "^2.0.2",
     "mrujs": "^0.7.1",
+    "parcel": "2.2.1",
     "postcss": "^8.3.11",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.0.2",
@@ -25,9 +30,11 @@
     "stimulus_reflex": "3.5.0-pre7"
   },
   "devDependencies": {
-    "esbuild": "^0.14.5",
-    "esbuild-plugin-manifest": "^0.5.0",
-    "esbuild-rails": "^1.0.3",
     "standard": "^16.0.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "lmdb": "2.1.4"
+    }
   }
 }
