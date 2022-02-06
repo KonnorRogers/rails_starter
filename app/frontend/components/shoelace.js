@@ -25,9 +25,6 @@ import '@shoelace-style/shoelace/dist/components/icon-button/icon-button.js'
 // input
 import '@shoelace-style/shoelace/dist/components/input/input.js'
 
-// form
-import '@shoelace-style/shoelace/dist/components/form/form.js'
-
 // menu
 import '@shoelace-style/shoelace/dist/components/menu/menu.js'
 

@@ -5,12 +5,12 @@ specifiers:
   '@hotwired/turbo': ^7.1.0
   '@rails/actioncable': ^7.0.0
   '@rails/activestorage': ^7.0.0
-  '@shoelace-style/shoelace': ^2.0.0-beta.62
+  '@shoelace-style/shoelace': ^2.0.0-beta.64
   '@web/test-runner': ^0.13.22
   autoprefixer: ^10.4.0
-  cable_ready: git+https://github.com/paramagicDev/cable_ready.git#chore/bundle-for-production
+  cable_ready: https://github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz
   lit: ^2.0.2
-  mrujs: ^0.7.4
+  mrujs: ^0.8.3
   postcss: ^8.4.5
   postcss-flexbugs-fixes: ^5.0.2
   postcss-import: ^14.0.2
@@ -30,12 +30,12 @@ dependencies:
   '@hotwired/turbo': 7.1.0
   '@rails/actioncable': 7.0.0
   '@rails/activestorage': 7.0.0
-  '@shoelace-style/shoelace': 2.0.0-beta.62
+  '@shoelace-style/shoelace': 2.0.0-beta.64
   '@web/test-runner': 0.13.22
   autoprefixer: 10.4.0_postcss@8.4.5
-  cable_ready: github.com/paramagicDev/cable_ready/464c353f5c6a2db2190e80464ae00f453a6d6f70
+  cable_ready: '@github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz'
   lit: 2.0.2
-  mrujs: 0.7.4
+  mrujs: 0.8.3
   postcss: 8.4.5
   postcss-flexbugs-fixes: 5.0.2_postcss@8.4.5
   postcss-import: 14.0.2_postcss@8.4.5
@@ -120,6 +120,10 @@ packages:
     resolution: {integrity: sha512-oz3d3MKjQ2tXynQgyaQaMpGTDNyNDeBdo6dXf1AbjTwhA1IRINHmA7kSaVYv9ttKweNkEoNqp9DqteDdgWzPEg==}
     dev: false
 
+  /@lit/reactive-element/1.2.1:
+    resolution: {integrity: sha512-03FYfMguIWo9E1y1qcTpXzoO8Ukpn0j5o4GjNFq/iHqJEPY6pYopsU44e7NSFIgCTorr8wdUU5PfVy8VeD6Rwg==}
+    dev: false
+
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -138,8 +142,8 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  /@popperjs/core/2.11.0:
-    resolution: {integrity: sha512-zrsUxjLOKAzdewIDRWy9nsV1GQsKBCWaGwsZQlCgr6/q+vjyZhFgqedLfFBuI9anTPEUT4APq9Mu0SZBTzIcGQ==}
+  /@popperjs/core/2.11.2:
+    resolution: {integrity: sha512-92FRmppjjqz29VMJ2dn+xdyXZBrMlE42AV6Kq6BwjWV7CNUW1hs2FtxSNLQE+gJhaZ6AAmYuO9y8dshhcBl7vA==}
     dev: false
 
   /@rails/actioncable/7.0.0:
@@ -187,15 +191,16 @@ packages:
     resolution: {integrity: sha512-AY3uF1Dzg3sBK4nKxvZ2KAjsdFxhLfHVWUpXXjIPaR+rPp8fxBWoNVvnLiROOV/cLg/zdLcU+Nn/xJdqcbEuDw==}
     dev: false
 
-  /@shoelace-style/shoelace/2.0.0-beta.62:
-    resolution: {integrity: sha512-RT8GF6IBnuznupHme5IJYWKP8v5DjC2swRbkouubw6hJLCLrIWOpQJPzwwkOiSdS7AOWKGf/SIWRdYDpNWydUA==}
+  /@shoelace-style/shoelace/2.0.0-beta.64:
+    resolution: {integrity: sha512-hI8Aiu3DRAAJoyFoKy/lpl1uEbe/s086iZh9GYCkZ4bqIyGHo/lHtPy7L6kNaLA4eNj+c/luxiji5qLDbpY2ag==}
+    engines: {node: '>=14.15.0'}
     dependencies:
       '@lit-labs/react': 1.0.1
-      '@popperjs/core': 2.11.0
+      '@popperjs/core': 2.11.2
       '@shoelace-style/animations': 1.1.0
       '@shoelace-style/localize': 2.1.3
       color: 4.1.0
-      lit: 2.0.2
+      lit: 2.1.2
       qr-creator: 1.0.0
     dev: false
 
@@ -2378,8 +2383,21 @@ packages:
       lit-html: 2.0.2
     dev: false
 
+  /lit-element/3.1.2:
+    resolution: {integrity: sha512-5VLn5a7anAFH7oz6d7TRG3KiTZQ5GEFsAgOKB8Yc+HDyuDUGOT2cL1CYTz/U4b/xlJxO+euP14pyji+z3Z3kOg==}
+    dependencies:
+      '@lit/reactive-element': 1.2.1
+      lit-html: 2.1.2
+    dev: false
+
   /lit-html/2.0.2:
     resolution: {integrity: sha512-dON7Zg8btb14/fWohQLQBdSgkoiQA4mIUy87evmyJHtxRq7zS6LlC32bT5EPWiof5PUQaDpF45v2OlrxHA5Clg==}
+    dependencies:
+      '@types/trusted-types': 2.0.2
+    dev: false
+
+  /lit-html/2.1.2:
+    resolution: {integrity: sha512-fp7oBzUdc7SEmOoSUNUZ6PM8se8eaIvc3pviQ5M+iCYuCpv9E23Nnb4hlxVzGhLWMnHSrnRVooNio0aAgjjrFw==}
     dependencies:
       '@types/trusted-types': 2.0.2
     dev: false
@@ -2390,6 +2408,14 @@ packages:
       '@lit/reactive-element': 1.0.2
       lit-element: 3.0.2
       lit-html: 2.0.2
+    dev: false
+
+  /lit/2.1.2:
+    resolution: {integrity: sha512-XacK89dJXF7BJbpiZSMvzT4RxHag7Wt+yNx7tErEVgGVlOFAeN871bj7ivotCMgYeBFWVp/hjKF/PDTk6L7gMA==}
+    dependencies:
+      '@lit/reactive-element': 1.2.1
+      lit-element: 3.1.2
+      lit-html: 2.1.2
     dev: false
 
   /load-json-file/4.0.0:
@@ -2543,8 +2569,8 @@ packages:
     resolution: {integrity: sha512-Y8YRbAEP3eKykroIBWrjcfMw7mmwJfjhqdpSvoqinu8Y702nAwikpXcNFDiIkyvfCLxLM9Wu95RZqo4a9jFBaA==}
     dev: false
 
-  /mrujs/0.7.4:
-    resolution: {integrity: sha512-IdFK+yIvGa0CuPFEPyMKbPYm8ZAIlW49INqHKKy/n8b1y/yDOZ/8kg7i1s1/0EyQHxQonzbHL/M1Pt35opNZNg==}
+  /mrujs/0.8.3:
+    resolution: {integrity: sha512-eHhOI6p68gXCgO08qjJugI3w6Kzoq3S7e/+nTH0cBkrTSQ1Ek2r6sMlTGRLcYlUGfGTY/gLt0kRdS7sLiYjV4w==}
     dependencies:
       morphdom: 2.6.1
     dev: false
@@ -4016,10 +4042,10 @@ packages:
     engines: {node: '>= 4.0.0'}
     dev: false
 
-  github.com/paramagicDev/cable_ready/464c353f5c6a2db2190e80464ae00f453a6d6f70:
-    resolution: {tarball: https://codeload.github.com/paramagicDev/cable_ready/tar.gz/464c353f5c6a2db2190e80464ae00f453a6d6f70}
+  '@github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz':
+    resolution: {tarball: https://github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz}
     name: cable_ready
-    version: 5.0.0-pre7
+    version: 5.0.0-pre8
     dependencies:
       morphdom: 2.6.1
     dev: false

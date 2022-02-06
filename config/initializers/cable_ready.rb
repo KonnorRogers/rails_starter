@@ -4,7 +4,7 @@ CableReady.configure do |config|
   # Enable/disable exiting / warning when the sanity checks fail options:
   # `:exit` or `:warn` or `:ignore`
 
-  # config.on_failed_sanity_checks = :exit
+  config.on_failed_sanity_checks = :warn
 
   # Enable/disable exiting / warning when there's a new CableReady release
   # `:exit` or `:warn` or `:ignore`
