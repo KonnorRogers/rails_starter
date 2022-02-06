@@ -3,26 +3,28 @@
     <h2 slot="header"><%= t("auth.signup") %></h2>
 
     <%= render "users/shared/error_messages", resource: resource %>
-    <%= sl_form_with(model: resource, url: registration_path(resource_name)) do |f| %>
+    <%= form_with(model: resource, url: registration_path(resource_name), local: false) do |f| %>
       <app-form-group>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.label :email %>
+        <%= sl_email **form_fields(resource, :email) %>
       </app-form-group>
 
       <app-form-group>
-        <sl-input id="<%= form_id(resource, :password) %>" name="<%= form_name(resource, :password) %>"
-                                                          type="password" autocomplete="new-password"
-                                                          toggle-password>
+        <%= sl_tag "input", id: form_id(resource, :password),
+                            name: form_name(resource, :password),
+                            type: "password", autocomplete: "new-password",
+                            "toggle-password": true do %>
           <label slot="label">
             <%= t("password") %>
             <% if @minimum_password_length %>
               <small>(<%= "#{@minimum_password_length} #{t("auth.minimum_characters")}" %>)</small><br />
             <% end %>
           </label>
-        </sl-input>
+        <% end %>
       </app-form-group>
 
       <sl-button-group>
-        <%= f.submit t("auth.signup") %>
+        <%= sl_tag("button", type: "submit") { t("auth.signup") } %>
       </sl-button-group>
     <% end %>
 

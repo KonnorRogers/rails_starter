@@ -2,7 +2,7 @@
   <sl-card>
     <h2 slot="header"><%= t("auth.forgot_password") %></h2>
 
-    <%= sl_form_with(model: resource, url: password_path(resource_name), method: :post) do |f| %>
+    <%= form_with(model: resource, url: password_path(resource_name), method: :post) do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
 
       <app-form-group>

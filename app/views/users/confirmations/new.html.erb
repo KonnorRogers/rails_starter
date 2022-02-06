@@ -8,15 +8,15 @@
   <sl-card style="width: 100%;">
     <h2 slot="header"><%= t("auth.resend_confirmation") %></h2>
 
-    <%= sl_form_with(model: resource, url: confirmation_path(resource_name), method: :post) do |f| %>
+    <%= form_with(model: resource, url: confirmation_path(resource_name), method: :post) do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
 
       <app-form-group>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+        <%= sl_tag "input", type: "email", autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), name: form_name(resource, :email), id: form_id(resource, :email) %>
       </app-form-group>
 
       <sl-button-group style="margin: 0 auto;">
-        <%= f.submit t("auth.resend_confirmation") %>
+        <%= sl_submit t("auth.resend_confirmation") %>
       </sl-button-group>
     <% end %>
 

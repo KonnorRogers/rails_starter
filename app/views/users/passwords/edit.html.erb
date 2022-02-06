@@ -1,6 +1,6 @@
 <h2><%= t("auth.change_password") %></h2>
 
-<%= sl_form_with(model: resource, url: password_path(resource_name), method: :put) do |f| %>
+<%= form_with(model: resource, url: password_path(resource_name), method: :put) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
 

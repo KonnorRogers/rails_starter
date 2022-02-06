@@ -1,5 +1,4 @@
 import Rails from "mrujs"
-import { Shoelace } from "mrujs/plugins"
 import * as ActiveStorage from "@rails/activestorage"
 import "@hotwired/turbo"
 import "../channels"
@@ -11,8 +10,11 @@ const images = import.meta.globEager('../images/**/*');
 
 ActiveStorage.start()
 
-Rails.start({
-  plugins: [
-    Shoelace(),
-  ]
+Rails.start()
+
+document.addEventListener("ajax:error", () => {
+  // Morphdom doesnt play nicely with these shoelace elements.
+  document.querySelectorAll("sl-card, sl-dropdown, sl-checkbox, sl-input, sl-button, sl-button-group").forEach((el) => {
+    el.outerHTML = ""
+  })
 })
