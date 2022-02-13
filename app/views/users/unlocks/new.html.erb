@@ -3,14 +3,14 @@
 <%= form_with(model: resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
-  <%= f.form_group do %>
+  <app-form-group>
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  <% end %>
+    <%= sl_email_field **form_fields(resource, :email) %>
+  </app-form-group>
 
-  <%= f.button_group do %>
-    <%= f.submit t("auth.resend_unlock") %>
-  <% end %>
+  <sl-button-group>
+    <%= sl_submit { t("auth.resend_unlock") } %>
+  </sl-button-group>
 <% end %>
 
 <%= render "users/shared/links" %>
