@@ -5,12 +5,12 @@
     <%= form_with(model: resource, url: password_path(resource_name), method: :post) do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
 
-      <app-form-group>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </app-form-group>
+      <%= sl_email label: "Email", **form_fields(resource, :email) %>
+
+      <br>
 
       <sl-button-group>
-        <%= f.submit t("auth.send_reset_instructions") %>
+        <%= sl_submit { t("auth.send_reset_instructions") } %>
       </sl-button-group>
     <% end %>
 

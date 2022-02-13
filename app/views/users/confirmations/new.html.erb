@@ -12,11 +12,11 @@
       <%= render "users/shared/error_messages", resource: resource %>
 
       <app-form-group>
-        <%= sl_tag "input", type: "email", autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), name: form_name(resource, :email), id: form_id(resource, :email) %>
+        <%= sl_tag "input", type: "email", autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), name: form_name(resource, :email), id: form_id(resource, :email), label: "Email" %>
       </app-form-group>
 
       <sl-button-group style="margin: 0 auto;">
-        <%= sl_submit t("auth.resend_confirmation") %>
+        <%= sl_submit { t("auth.resend_confirmation") } %>
       </sl-button-group>
     <% end %>
 

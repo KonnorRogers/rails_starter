@@ -5,20 +5,23 @@
   <%= f.hidden_field :reset_password_token %>
 
   <app-form-group>
-    <%= f.label :password, t("auth.new_password") %><br />
-    <% if @minimum_password_length %>
-      <small>(<%= @minimum_password_length %> characters minimum)</small><br />
+    <%= sl_password **form_fields(resource, :password), autocomplete: "new-password" do %>
+      <label slot="label">
+        <%= t("auth.new_password") %>
+        <% if @minimum_password_length %>
+          <small>(<%= @minimum_password_length %> characters minimum)</small><br />
+        <% end %>
+      </label>
     <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
   </app-form-group>
 
   <app-form-group>
-    <%= f.label :password_confirmation, t("auth.confirm_new password") %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= sl_password autocomplete: "new-password", label: t("auth.confirm_new_password"),
+                    **form_fields(resource, :password_confirmation) %>
   </app-form-group>
 
   <sl-button-group>
-    <%= f.submit t("auth.change_password") %>
+    <%= sl_submit t("auth.change_password") %>
   </sl-button-group>
 <% end %>
 

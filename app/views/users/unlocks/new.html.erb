@@ -4,8 +4,7 @@
   <%= render "users/shared/error_messages", resource: resource %>
 
   <app-form-group>
-    <%= f.label :email %><br />
-    <%= sl_email_field **form_fields(resource, :email) %>
+    <%= sl_email_field **form_fields(resource, :email), label: "Email" %>
   </app-form-group>
 
   <sl-button-group>

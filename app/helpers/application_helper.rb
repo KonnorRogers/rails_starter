@@ -8,7 +8,7 @@ module ApplicationHelper
     tag.public_send("sl_#{name.to_s.underscore}".to_sym, **options, &block)
   end
 
-  def sl_submit(**options, &block)
+  def sl_submit(name = nil, **options, &block)
     options[:name] = options.fetch(:name, "commit")
     sl_tag("button", type: "submit", **options, &block)
   end
