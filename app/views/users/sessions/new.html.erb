@@ -3,7 +3,7 @@
     <h2 slot="header"><%= t("auth.login") %></h2>
 
     <%= render "users/shared/error_messages", resource: resource %>
-    <%= form_with(model: resource, url: session_path(resource_name)) do |f| %>
+    <%= form_with(model: resource, url: session_path(resource_name), local: false) do |f| %>
       <app-form-group>
         <%= sl_email **form_fields(resource, :email), label: "Email" %>
       </app-form-group>
@@ -26,9 +26,7 @@
       <% end %>
 
       <sl-button-group>
-        <%= sl_tag "button", type: "submit" do %>
-          <%= t("auth.login") %>
-        <% end %>
+        <%= sl_submit { t("auth.login") } %>
       </sl-button-group>
     <% end %>
 

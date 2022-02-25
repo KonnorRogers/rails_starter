@@ -13,6 +13,9 @@ import '@shoelace-style/shoelace/dist/components/checkbox/checkbox.js'
 // card
 import '@shoelace-style/shoelace/dist/components/card/card.js'
 
+// dialog
+import '@shoelace-style/shoelace/dist/components/dialog/dialog.js'
+
 // dropdown
 import '@shoelace-style/shoelace/dist/components/dropdown/dropdown.js'
 

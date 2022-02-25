@@ -4,7 +4,6 @@
   <%= render "users/shared/error_messages", resource: resource %>
 
   <app-form-group>
-    <%= f.label :email %><br />
     <%= sl_email **form_fields(resource, :email) %>
   </app-form-group>
 
@@ -13,8 +12,19 @@
   <% end %>
 
   <app-form-group>
-    <%= f.label :password %> <small>(<%= t("auth.no_change") %>) </small><br />
-    <%= sl_password autocomplete: "new-password" **form_fields(resource, :password) %>>
+    <%= sl_password autocomplete: "current-password", **form_fields(resource, :current_password).except(:label) do %>
+      <label slot="label">
+        <%= form_label(resource, :current_password) %> <small>(<%= t("auth.current_password_prompt") %>)</small>
+      </label>
+    <% end %>
+  </app-form-group>
+
+  <app-form-group>
+    <%= sl_password "toggle-password": "true", autocomplete: "new-password", **form_fields(resource, :password) do %>
+      <label slot="label">
+        New Password
+        <small>(<%= t("auth.no_change") %>) </small>
+      </label>
       <% if @minimum_password_length %>
         <br />
         <small><%= "#{@minimum_password_length} #{t('auth.minimum_characters')}" %> </small>
@@ -23,22 +33,27 @@
   </app-form-group>
 
   <app-form-group>
-    <%= f.label :password_confirmation %><br />
     <%= sl_password autocomplete: "new-password", **form_fields(resource, :password_confirmation) %>
   </app-form-group>
 
   <app-form-group>
-    <%= f.label :current_password %> <small>(<%= t("auth.current_password_prompt") %>)</small><br />
-    <%= sl_password autocomplete: "current-password", **form_fields(resource, :current_password) %>
+    <%= sl_submit { t("update") } %>
   </app-form-group>
 
-  <sl-button-group>
-    <%= sl_submit { t("update") } %>
-  </sl-button-group>
+  <app-form-group data-controller="confirm">
+    <%= sl_submit type: "button", variant: "danger", formmethod: :delete, formaction: registration_path(resource_name), data: { action: "click->confirm#show" } do %>
+      <%= t("auth.cancel") %>
+    <% end %>
+
+    <sl-dialog data-confirm-target="dialog" label="Are you sure?" class="dialog-overview">
+      <sl-button-group slot="footer">
+        <sl-button data-action="click->confirm#hide">Cancel</sl-button>
+        <sl-button variant="danger" data-action="click->confirm#confirm">Confirm</sl-button>
+      </sl-button-group>
+    </sl-dialog>
+  </app-form-group>
+
 <% end %>
 
-<h3><%= t("auth.cancel") %></h3>
-
-<p><%= button_to t("auth.cancel"), registration_path(resource_name), data: { confirm: t("are_you_sure") }, method: :delete %></p>
 
 <%= link_to t("back"), :back %>

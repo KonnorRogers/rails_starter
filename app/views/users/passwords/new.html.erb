@@ -5,9 +5,9 @@
     <%= form_with(model: resource, url: password_path(resource_name), method: :post) do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
 
-      <%= sl_email label: "Email", **form_fields(resource, :email) %>
-
-      <br>
+      <app-form-group>
+        <%= sl_email label: "Email", **form_fields(resource, :email) %>
+      </app-form-group>
 
       <sl-button-group>
         <%= sl_submit { t("auth.send_reset_instructions") } %>

@@ -64,6 +64,21 @@ module ApplicationHelper
     resource.public_send(symbol.to_sym)
   end
 
+
+  # Generates an i18n value from the given model.
+  # @param {Object} resource - An instance of an ActiveRecord or ActiveModel usually.
+  # @param {Symbol} symbol - The attribute to call.
+  # @return {String}
+  # @example
+  #   <% user = User.new %>
+  #   <%= form_with model: user do %>
+  #     <label for="user_first_name"><%= form_label(user, :first_name) %></label>
+  #     <input id="user_first_name" name="user[first_name]" value="<%= form_value(user, :first_name) %>" />
+  #   <% end %>
+  def form_label(resource, symbol)
+    resource.class.human_attribute_name(symbol)
+  end
+
   # The string version of id, name, and value of an Object.
   # @param {Object} resource - An instance of an ActiveRecord or ActiveModel usually.
   # @param {Symbol} symbol - The attribute to call.
@@ -74,7 +89,6 @@ module ApplicationHelper
     form_fields(resource, symbol).map { |key, value| "#{key}='#{value}'" }.join(" ")
   end
 
-
   # The Hash version of id, name, and value of an Object.
   # @param {Object} resource - An instance of an ActiveRecord or ActiveModel usually.
   # @param {Symbol} symbol - The attribute to call.
@@ -82,7 +96,12 @@ module ApplicationHelper
   # @example
   #   <%= sl_tag "input", **form_fields(resource, :column) %>
   def form_fields(resource, symbol)
-    {id: form_id(resource, symbol), name: form_name(resource, symbol), value: form_value(resource, symbol)}
+    {
+      id: form_id(resource, symbol),
+      name: form_name(resource, symbol),
+      value: form_value(resource, symbol),
+      label: form_label(resource, symbol)
+    }
   end
 
   def checked_html(bool)

@@ -31,7 +31,7 @@ class FlashComponent < ApplicationComponent
   end
 
   def call
-    helpers.tag.sl_alert(type: variant, open: open, closable: closable, duration: duration) do
+    helpers.tag.sl_alert(variant: variant, open: open, closable: closable, duration: duration) do
       helpers.tag.sl_icon(slot: "icon", name: icon) + "\n" + @message
     end
   end

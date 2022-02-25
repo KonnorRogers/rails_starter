@@ -5,15 +5,14 @@
     <%= render "users/shared/error_messages", resource: resource %>
     <%= form_with(model: resource, url: registration_path(resource_name), local: false) do |f| %>
       <app-form-group>
-        <%= f.label :email %>
-        <%= sl_email **form_fields(resource, :email) %>
+        <%= sl_email label: "Email", **form_fields(resource, :email) %>
       </app-form-group>
 
       <app-form-group>
-        <%= sl_tag "input", id: form_id(resource, :password),
-                            name: form_name(resource, :password),
-                            type: "password", autocomplete: "new-password",
-                            "toggle-password": true do %>
+        <%= sl_password id: form_id(resource, :password),
+                        name: form_name(resource, :password),
+                        autocomplete: "new-password",
+                        "toggle-password": true do %>
           <label slot="label">
             <%= t("password") %>
             <% if @minimum_password_length %>
