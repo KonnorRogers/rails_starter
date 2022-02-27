@@ -1,47 +1,25 @@
 <h2><%= t("edit") + " " + resource_name.to_s.humanize %></h2>
 
-<%= form_with(model: resource, url: registration_path(resource_name), method: :put, local: false) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
-
-  <app-form-group>
-    <%= sl_email **form_fields(resource, :email) %>
-  </app-form-group>
+<%= form_with(model: resource, url: registration_path(resource_name), data: { controller: "confirm", action: "submit->confirm#show:capture" }, method: :put, local: false) do |f| %>
+  <%= render "users/registrations/email_field", resource: resource %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div><%= t("auth.waiting_confirmation") %>: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <app-form-group>
-    <%= sl_password autocomplete: "current-password", **form_fields(resource, :current_password).except(:label) do %>
-      <label slot="label">
-        <%= form_label(resource, :current_password) %> <small>(<%= t("auth.current_password_prompt") %>)</small>
-      </label>
-    <% end %>
-  </app-form-group>
-
-  <app-form-group>
-    <%= sl_password "toggle-password": "true", autocomplete: "new-password", **form_fields(resource, :password) do %>
-      <label slot="label">
-        New Password
-        <small>(<%= t("auth.no_change") %>) </small>
-      </label>
-      <% if @minimum_password_length %>
-        <br />
-        <small><%= "#{@minimum_password_length} #{t('auth.minimum_characters')}" %> </small>
-      <% end %>
-    <% end %>
-  </app-form-group>
-
-  <app-form-group>
-    <%= sl_password autocomplete: "new-password", **form_fields(resource, :password_confirmation) %>
-  </app-form-group>
+  <%= render "users/registrations/current_password_field", resource: resource %>
+  <%= render "users/registrations/change_password_field", resource: resource %>
+  <%= render "users/registrations/confirm_password_field", resource: resource %>
 
   <app-form-group>
     <%= sl_submit { t("update") } %>
   </app-form-group>
 
-  <app-form-group data-controller="confirm">
-    <%= sl_submit type: "button", variant: "danger", formmethod: :delete, formaction: registration_path(resource_name), data: { action: "click->confirm#show" } do %>
+  <app-form-group>
+    <button type="submit" formmethod="delete" formaction="<%= registration_path(resource_name) %>">
+      <%= t("auth.cancel") %>
+    </button>
+    <%= sl_submit variant: "danger", formmethod: :delete, formaction: registration_path(resource_name) do %>
       <%= t("auth.cancel") %>
     <% end %>
 
@@ -52,8 +30,4 @@
       </sl-button-group>
     </sl-dialog>
   </app-form-group>
-
 <% end %>
-
-
-<%= link_to t("back"), :back %>

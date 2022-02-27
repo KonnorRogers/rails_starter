@@ -2,28 +2,12 @@
   <sl-card>
     <h2 slot="header"><%= t("auth.signup") %></h2>
 
-    <%= render "users/shared/error_messages", resource: resource %>
     <%= form_with(model: resource, url: registration_path(resource_name), local: false) do |f| %>
-      <app-form-group>
-        <%= sl_email label: "Email", **form_fields(resource, :email) %>
-      </app-form-group>
-
-      <app-form-group>
-        <%= sl_password id: form_id(resource, :password),
-                        name: form_name(resource, :password),
-                        autocomplete: "new-password",
-                        "toggle-password": true do %>
-          <label slot="label">
-            <%= t("password") %>
-            <% if @minimum_password_length %>
-              <small>(<%= "#{@minimum_password_length} #{t("auth.minimum_characters")}" %>)</small><br />
-            <% end %>
-          </label>
-        <% end %>
-      </app-form-group>
+      <%= render "email_field", resource: resource %>
+      <%= render "new_password_field", resource: resource %>
 
       <sl-button-group>
-        <%= sl_tag("button", type: "submit") { t("auth.signup") } %>
+        <%= sl_submit { t("auth.signup") } %>
       </sl-button-group>
     <% end %>
 

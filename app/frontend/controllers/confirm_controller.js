@@ -10,10 +10,14 @@ export default class ConfirmController extends Controller {
   }
 
   show (event) {
+    if (event.target !== this.triggerTarget) return
     if (!this.shouldShow) {
       return
     }
 
+    event.preventDefault()
+    event.stopPropagation()
+    event.stopImmediatePropagation()
     this.trigger = event.currentTarget
     this.dialogTarget.show()
   }
@@ -24,7 +28,7 @@ export default class ConfirmController extends Controller {
 
   confirm () {
     this.dialogTarget.hide()
-    this.trigger.click()
+    this.element.requestSubmit()
   }
 }
 

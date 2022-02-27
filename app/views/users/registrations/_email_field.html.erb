@@ -1,0 +1,3 @@
+<%= render FormGroupComponent.new(error: error_for(resource, :email)) do %>
+  <%= sl_email label: "Email", **form_fields(resource, :email) %>
+<% end %>

@@ -17,3 +17,27 @@ button {
 sl-card {
   width: 100%;
 }
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.sl-theme-light .form-group-error,
+.form-group-error {
+  --sl-input-border-color: var(--sl-color-danger-500);
+  --sl-input-border-color-focus: var(--sl-color-danger-400);
+  --sl-input-border-color-hover: var(--sl-color-danger-400);
+
+  --sl-input-background-color: var(--sl-color-danger-50);
+  --sl-input-background-color-hover: var(--sl-color-danger-50);
+  --sl-input-background-color-focus: var(--sl-color-danger-50);
+
+  --sl-input-color: var(--sl-color-danger-500);
+  --sl-input-icon-color: var(--sl-color-danger-400);
+  --sl-input-label-color: var(--sl-color-danger-500);
+  --sl-input-help-text-color: var(--sl-color-danger-400);
+
+  /* Clean this up, this is the HSL of --sl-color-red-500 */
+  --sl-focus-ring: 0 0 0 var(--sl-focus-ring-width) hsl(0 84.2% 60.2% / var(--sl-focus-ring-alpha))
+}

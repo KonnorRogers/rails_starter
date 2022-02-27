@@ -16,6 +16,7 @@ class FlashComponent < ApplicationComponent
   option :duration, default: proc { "Infinity" }
   option :open, default: proc { true }
   option :closable, default: proc { true }
+  option :html_attributes, default: proc { {} }
 
   def self.to_variant(str)
     str = str.to_s
@@ -31,7 +32,7 @@ class FlashComponent < ApplicationComponent
   end
 
   def call
-    helpers.tag.sl_alert(variant: variant, open: open, closable: closable, duration: duration) do
+    helpers.tag.sl_alert(variant: variant, open: open, closable: closable, duration: duration, **html_attributes) do
       helpers.tag.sl_icon(slot: "icon", name: icon) + "\n" + @message
     end
   end

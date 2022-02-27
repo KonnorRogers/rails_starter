@@ -3,7 +3,12 @@
     <h2 slot="header"><%= t("auth.login") %></h2>
 
     <%= render "users/shared/error_messages", resource: resource %>
-    <%= form_with(model: resource, url: session_path(resource_name), data: { turbo: false }) do |f| %>
+    <%= form_with(model: resource, url: session_path(resource_name), data: { controller: "devise", remote: "true" }) do |f| %>
+      <%= render FlashComponent.new(
+        variant: "warning", message: "", closable: false,
+        html_attributes: { "hidden" => true, "data-devise-target" => "alert" }
+      ) %>
+
       <app-form-group>
         <%= sl_email **form_fields(resource, :email), label: "Email" %>
       </app-form-group>
