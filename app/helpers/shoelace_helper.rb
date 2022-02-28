@@ -15,6 +15,7 @@ module ShoelaceHelper
 
   def sl_input(**options, &block)
     if options[:error]
+      options[:class] = options[:class].to_s + " form-error"
       error = render(FormErrorComponent.new(slot: "help-text", error: options[:error]))
 
       block_with_error = proc {

@@ -1,4 +1,4 @@
-// import Rails from "mrujs"
+import Rails from "mrujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "@hotwired/turbo"
 import "../channels"

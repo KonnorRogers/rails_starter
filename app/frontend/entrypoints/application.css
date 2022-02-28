@@ -23,8 +23,8 @@ p {
   padding: 0;
 }
 
-.sl-theme-light .form-group-error,
-.form-group-error {
+.form-group-error,
+.form-error {
   --sl-input-border-color: var(--sl-color-danger-500);
   --sl-input-border-color-focus: var(--sl-color-danger-400);
   --sl-input-border-color-hover: var(--sl-color-danger-400);
