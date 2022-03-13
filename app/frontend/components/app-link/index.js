@@ -1,2 +1,9 @@
 import { AppLink } from "./component"
-window.customElements.define('app-link', AppLink)
+
+const name = "app-link"
+window.customElements.define(name, AppLink)
+
+export {
+  name,
+  AppLink as class
+}

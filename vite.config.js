@@ -11,6 +11,11 @@ const vitePath = `public/shoelace/assets`
  */
 export default defineConfig({
   clearScreen: false,
+  // server: {
+  //   fs: {
+  //     allow: ["../../../mrujs"]
+  //   }
+  // },
   plugins: [
     RubyPlugin(),
     copy({

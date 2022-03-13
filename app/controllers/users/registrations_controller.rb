@@ -28,6 +28,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       clean_up_passwords resource
       set_minimum_password_length
+
+      # This is the only change. Without a status code it fails.
       respond_with resource, status: 422
     end
   end

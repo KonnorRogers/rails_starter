@@ -2,6 +2,9 @@
   "name": "cableready-test",
   "private": true,
   "version": "0.1.0",
+  "scripts": {
+    "setup": "npx pnpm add -g pnpm && pnpm install"
+  },
   "dependencies": {
     "@esm-bundle/chai": "^4.3.4-fix.0",
     "@hotwired/turbo": "^7.1.0",
@@ -21,12 +24,12 @@
     "stimulus": "^3.0.1",
     "stimulus-vite-helpers": "^1.0.4",
     "stimulus_reflex": "3.5.0-pre7",
+    "vite": "^2.7.3",
     "vite-plugin-copy": "^0.1.6",
-    "vite-plugin-full-reload": "^0.2.2"
+    "vite-plugin-full-reload": "^0.2.2",
+    "vite-plugin-ruby": "^3.0.4"
   },
   "devDependencies": {
-    "standard": "^16.0.4",
-    "vite": "^2.7.3",
-    "vite-plugin-ruby": "^3.0.4"
+    "standard": "^16.0.4"
   }
 }

@@ -1,2 +1,9 @@
 import { AppContainer } from './component'
-window.customElements.define('app-container', AppContainer)
+
+const name = 'app-container'
+window.customElements.define(name, AppContainer)
+
+export {
+  name,
+  AppContainer as class
+}

@@ -1,2 +1,8 @@
 import { AppFormGroup } from "./component"
-window.customElements.define('app-form-group', AppFormGroup)
+const name = 'app-form-group'
+window.customElements.define(name, AppFormGroup)
+
+export {
+  name,
+  AppFormGroup as class
+}

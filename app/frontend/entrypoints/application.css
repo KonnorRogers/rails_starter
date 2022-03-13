@@ -41,3 +41,7 @@ p {
   /* Clean this up, this is the HSL of --sl-color-red-500 */
   --sl-focus-ring: 0 0 0 var(--sl-focus-ring-width) hsl(0 84.2% 60.2% / var(--sl-focus-ring-alpha))
 }
+
+:where(:not(:defined)) {
+  visibility: hidden;
+}
