@@ -15,7 +15,7 @@
     "autoprefixer": "^10.4.0",
     "cable_ready": "https://github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz",
     "lit": "^2.0.2",
-    "mrujs": "^0.8.3",
+    "mrujs": "0.9.0",
     "postcss": "^8.4.5",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.0.2",
