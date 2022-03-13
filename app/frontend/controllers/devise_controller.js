@@ -26,6 +26,7 @@ export default class  extends Controller {
     event.detail.fetchResponse.text().then((text) => {
       this.alertTarget.innerHTML = this.originalHTML + text
       this.alertTarget.removeAttribute("hidden")
+      this.element.querySelectorAll("[loading]").forEach((el) => el.removeAttribute("loading"))
     })
   }
 }

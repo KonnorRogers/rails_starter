@@ -37,7 +37,7 @@ function clickEventIsSignificant(event) {
 
 function findSubmitButton(target) {
   if (target instanceof HTMLElement) {
-    return  target.closest("sl-button[type='submit']:not([disabled]):not(:disabled)")
+    return target.closest("sl-button[type='submit']:not([disabled]):not(:disabled)")
   }
 
   if (Array.isArray(target)) {
