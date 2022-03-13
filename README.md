@@ -50,3 +50,12 @@ bundle exec rails db:migrate
 Then navigate to `localhost:3000` and you should be good to
 go.
 
+## Morphdom Error Reproduction
+
+go to: `localhost:3000/signup` and then click `sign up`
+multiple times and watch shoelace fail.
+
+To "fix" the error, you can go to
+`app/javascript/entrypoints/application.js` and uncomment
+the `ajax:error` code and it will make the shoelace
+components render as expected.
