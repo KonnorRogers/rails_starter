@@ -21,3 +21,12 @@ import { componentPromises } from "../components"
 })();
 
 
+// Uncomment the belown code to fix the errors found on /signup
+// It works by resetting the shoelace components *BEFORE* morphdom fires.
+// document.addEventListener("ajax:error", resetShoelaceComponents)
+
+// function resetShoelaceComponents () {
+//   document.querySelectorAll("sl-card, sl-button, sl-input").forEach((el) => {
+//     el.outerHTML = ""
+//   })
+// }
