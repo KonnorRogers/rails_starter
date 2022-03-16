@@ -15,6 +15,7 @@ import { componentPromises } from "../components"
     // ...shoelacePromises,
     componentPromises(),
     asPromise(preventDoubleClick),
+    // asPromise(Rails.start.bind(Rails), { errorRenderer: "turbo" }),
     asPromise(Rails.start.bind(Rails)),
     asPromise(ActiveStorage.start),
   ]);

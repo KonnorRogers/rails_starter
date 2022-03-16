@@ -1,7 +1,8 @@
-import * as appContainer from "./app-container"
-import * as appFormGroup from "./app-form-group"
-import * as appLink from "./app-link"
+// import * as appContainer from "./app-container"
+// import * as appFormGroup from "./app-form-group"
+// import * as appLink from "./app-link"
 import { shoelacePromises } from "./shoelace"
+import "konnors-pc"
 
 function appPromises() {
   return [
@@ -12,5 +13,5 @@ function appPromises() {
 }
 
 export function componentPromises () {
-  return [appPromises()].concat(shoelacePromises)
+  return [].concat(shoelacePromises)
 }

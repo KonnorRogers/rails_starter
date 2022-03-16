@@ -1,4 +1,4 @@
-<app-container style="margin-top: var(--sl-spacing-4x-large);">
+<kpc-container style="margin-top: var(--sl-spacing-4x-large);">
   <sl-card>
     <h2 slot="header"><%= t("auth.login") %></h2>
 
@@ -9,25 +9,25 @@
         html_attributes: { "hidden" => true, "data-devise-target" => "alert" }
       ) %>
 
-      <app-form-group>
+      <kpc-form-group>
         <%= sl_email **form_fields(resource, :email), label: "Email" %>
-      </app-form-group>
+      </kpc-form-group>
 
-      <app-form-group>
+      <kpc-form-group>
         <%= sl_password autocomplete: "current-password", **form_fields(resource, :password), label: "Password" %>
-        <app-link style="margin-top: var(--sl-spacing-2x-small);" href="<%= new_password_path(resource_name) %>">
+        <kpc-link style="margin-top: var(--sl-spacing-2x-small);" href="<%= new_password_path(resource_name) %>">
           <%= t("auth.forgot_password") %>
-        </app-link>
-      </app-form-group>
+        </kpc-link>
+      </kpc-form-group>
 
       <% if devise_mapping.rememberable? %>
-        <app-form-group>
+        <kpc-form-group>
           <input type="hidden" value="0" name="<%= form_name resource, :remember_me %>">
           <sl-checkbox value="1" name="<%= form_name resource, :remember_me %>"
                       <%= checked_html(resource.remember_me) %>>
             <%= t("auth.remember_me") %>
           </sl-checkbox>
-        </app-form-group>
+        </kpc-form-group>
       <% end %>
 
       <sl-button-group>
@@ -39,4 +39,4 @@
       <%= render "users/shared/links" %>
     </div>
   </sl-card>
-</app-container>
+</kpc-container>

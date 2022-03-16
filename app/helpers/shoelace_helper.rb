@@ -8,7 +8,7 @@ module ShoelaceHelper
     tag.public_send("sl_#{name.to_s.underscore}".to_sym, **options, &block)
   end
 
-  def sl_submit(name = nil, **options, &block)
+  def sl_submit(**options, &block)
     options[:name] = options.fetch(:name, "commit")
     sl_tag("button", type: "submit", **options, &block)
   end
@@ -23,6 +23,7 @@ module ShoelaceHelper
         concat error
       }
 
+      options.delete(:error)
       return sl_tag("input", **options, &block_with_error)
     end
 
@@ -41,7 +42,7 @@ module ShoelaceHelper
   end
 
   # @see https://github.com/rails/rails/blob/main/actionview/lib/action_view/helpers/url_helper.rb#L209
-  def app_link_to(name = nil, options = nil, html_options = nil, &block)
+  def kpc_link_to(name = nil, options = nil, html_options = nil, &block)
     html_options, options, name = options, name, block if block_given?
     options ||= {}
 
@@ -50,14 +51,14 @@ module ShoelaceHelper
     url = url_target(name, options)
     html_options["href"] ||= url
 
-    # Changed from "a" to "app-link"
-    content_tag("app-link", name || url, html_options, &block)
+    # Changed from "a" to "kpc-link"
+    content_tag("kpc-link", name || url, html_options, &block)
   end
 
   # @see https://github.com/rails/rails/blob/main/actionview/lib/action_view/helpers/url_helper.rb#L460
-  def app_link_to_if(condition, name, options = {}, html_options = {}, &block)
+  def kpc_link_to_if(condition, name, options = {}, html_options = {}, &block)
     if condition
-      app_link_to(name, options, html_options) # Changed from #link_to to #app_link_to
+      kpc_link_to(name, options, html_options) # Changed from #link_to to #kpc_link_to
     else
       if block_given?
         block.arity <= 1 ? capture(name, &block) : capture(name, options, html_options, &block)
@@ -68,8 +69,8 @@ module ShoelaceHelper
   end
 
   # @see https://github.com/rails/rails/blob/main/actionview/lib/action_view/helpers/url_helper.rb#L437
-  def app_link_to_unless(condition, name, options = {}, html_options = {}, &block)
-    app_link_to_if !condition, name, options, html_options, &block
+  def kpc_link_to_unless(condition, name, options = {}, html_options = {}, &block)
+    kpc_link_to_if !condition, name, options, html_options, &block
   end
 
   # https://github.com/rails/rails/tree/main/actionview/lib/action_view/helpers/url_helper.rb#L734-L740

@@ -3,9 +3,9 @@
 <%= form_with(model: resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
-  <app-form-group>
+  <kpc-form-group>
     <%= sl_email_field **form_fields(resource, :email), label: "Email" %>
-  </app-form-group>
+  </kpc-form-group>
 
   <sl-button-group>
     <%= sl_submit { t("auth.resend_unlock") } %>

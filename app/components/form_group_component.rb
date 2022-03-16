@@ -5,13 +5,13 @@ class FormGroupComponent < ApplicationComponent
   end
 
   def call
-    return helpers.tag.app_form_group { content } if attrs.nil?
+    return helpers.tag.kpc_form_group { content } if attrs.nil?
 
     hash = attrs.to_h
     hash["class"] = hash["class"] + " form-group-error" if attrs.error.present?
     hash["data-controller"] = hash["data-controller"].to_s + " form-group"
 
-    helpers.tag.app_form_group(**hash) do
+    helpers.tag.kpc_form_group(**hash) do
       content
     end
   end

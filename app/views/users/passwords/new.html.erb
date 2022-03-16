@@ -1,13 +1,13 @@
-<app-container style="margin-top: var(--sl-spacing-4x-large);">
+<kpc-container style="margin-top: var(--sl-spacing-4x-large);">
   <sl-card>
     <h2 slot="header"><%= t("auth.forgot_password") %></h2>
 
     <%= form_with(model: resource, url: password_path(resource_name), method: :post) do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
 
-      <app-form-group>
+      <kpc-form-group>
         <%= sl_email label: "Email", **form_fields(resource, :email) %>
-      </app-form-group>
+      </kpc-form-group>
 
       <sl-button-group>
         <%= sl_submit { t("auth.send_reset_instructions") } %>
@@ -18,4 +18,4 @@
       <%= render "users/shared/links" %>
     </div>
   </sl-card>
-</app-container>
+</kpc-container>

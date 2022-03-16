@@ -4,7 +4,7 @@
   <%= render "users/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
 
-  <app-form-group>
+  <kpc-form-group>
     <%= sl_password **form_fields(resource, :password), autocomplete: "new-password" do %>
       <label slot="label">
         <%= t("auth.new_password") %>
@@ -13,12 +13,12 @@
         <% end %>
       </label>
     <% end %>
-  </app-form-group>
+  </kpc-form-group>
 
-  <app-form-group>
+  <kpc-form-group>
     <%= sl_password autocomplete: "new-password", label: t("auth.confirm_new_password"),
                     **form_fields(resource, :password_confirmation) %>
-  </app-form-group>
+  </kpc-form-group>
 
   <sl-button-group>
     <%= sl_submit t("auth.change_password") %>

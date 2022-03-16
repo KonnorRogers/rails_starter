@@ -1,4 +1,4 @@
-<app-container style="margin-top: var(--sl-spacing-4x-large);">
+<kpc-container style="margin-top: var(--sl-spacing-4x-large);">
   <sl-card>
     <h1 slot="header">Welcome to your new app!</h1>
     <p>Feel free to play around!</p>
@@ -14,10 +14,10 @@
 
       <% if Rails.env.development? %>
         <br>
-        <app-link href="<%= __design_docs_path %>">
+        <kpc-link href="<%= __design_docs_path %>">
           Design docs
-        </app-link>
+        </kpc-link>
       <% end %>
     </div>
   </sl-card>
-</app-container>
+</kpc-container>

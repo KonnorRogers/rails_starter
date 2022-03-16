@@ -11,11 +11,11 @@ const vitePath = `public/shoelace/assets`
  */
 export default defineConfig({
   clearScreen: false,
-  // server: {
-  //   fs: {
-  //     allow: ["../../../mrujs"]
-  //   }
-  // },
+  server: {
+    fs: {
+      allow: ["../../../../oss/konnors-personal-components"]
+    }
+  },
   plugins: [
     RubyPlugin(),
     copy({

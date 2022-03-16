@@ -11,11 +11,11 @@
   <%= render "users/registrations/change_password_field", resource: resource %>
   <%= render "users/registrations/confirm_password_field", resource: resource %>
 
-  <app-form-group>
+  <kpc-form-group>
     <%= sl_submit { t("update") } %>
-  </app-form-group>
+  </kpc-form-group>
 
-  <app-form-group>
+  <kpc-form-group>
     <button type="submit" formmethod="delete" formaction="<%= registration_path(resource_name) %>">
       <%= t("auth.cancel") %>
     </button>
@@ -29,5 +29,5 @@
         <sl-button variant="danger" data-action="click->confirm#confirm">Confirm</sl-button>
       </sl-button-group>
     </sl-dialog>
-  </app-form-group>
+  </kpc-form-group>
 <% end %>

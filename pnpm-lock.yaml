@@ -10,7 +10,7 @@ specifiers:
   autoprefixer: ^10.4.0
   cable_ready: https://github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz
   lit: ^2.0.2
-  mrujs: ^0.8.3
+  mrujs: 0.9.0
   postcss: ^8.4.5
   postcss-flexbugs-fixes: ^5.0.2
   postcss-import: ^14.0.2
@@ -35,7 +35,7 @@ dependencies:
   autoprefixer: 10.4.0_postcss@8.4.5
   cable_ready: '@github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz'
   lit: 2.0.2
-  mrujs: 0.8.4
+  mrujs: 0.9.0
   postcss: 8.4.5
   postcss-flexbugs-fixes: 5.0.2_postcss@8.4.5
   postcss-import: 14.0.2_postcss@8.4.5
@@ -2580,8 +2580,8 @@ packages:
     resolution: {integrity: sha512-Y8YRbAEP3eKykroIBWrjcfMw7mmwJfjhqdpSvoqinu8Y702nAwikpXcNFDiIkyvfCLxLM9Wu95RZqo4a9jFBaA==}
     dev: false
 
-  /mrujs/0.8.4:
-    resolution: {integrity: sha512-FxoCFbDga8r4ZkaEmT4y5rpd6BS+H/MMPhdLI3O0X39dyPO+YCCj0dC+U/aPNfVwKAsd/SC4Pa7G4i6x9y2ksQ==}
+  /mrujs/0.9.0:
+    resolution: {integrity: sha512-ebajLt6PXPN5b7+TxjT+EsN/7vi9XOaN1KfWVXCOXaCxAQmUmS3RhL+hEv6KyFl1UbkAkRhCCK4/Na7rQw2KFg==}
     dependencies:
       morphdom: 2.6.1
     dev: false
