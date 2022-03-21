@@ -1,3 +1,3 @@
-<%= render FormGroupComponent.new(error: error_for(resource, :email)) do %>
+<kpc-form-group size="medium">
   <%= sl_email label: "Email", **form_fields(resource, :email) %>
-<% end %>
+</kpc-form-group>

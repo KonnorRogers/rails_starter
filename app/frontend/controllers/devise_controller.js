@@ -10,7 +10,7 @@ import { Controller } from "stimulus"
  *    <div data-devise-target="alert" hidden></div>
  *  </form>
  */
-export default class  extends Controller {
+export default class DeviseController extends Controller {
   static targets = ["alert"]
   connect () {
     this.originalHTML = this.alertTarget.innerHTML

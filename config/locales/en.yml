@@ -33,6 +33,8 @@ en:
   are_you_sure: "Are you sure?"
   back: "Back"
   create: "Create"
+  confirm: "Confirm"
+  dialog: "Dialog"
   edit: "Edit"
   destroy: "Destroy"
   delete: "Delete"
@@ -66,8 +68,11 @@ en:
 
   email:
     requested_password_change: "Someone has requested a link to change your password. You can do this through the link below."
-    requested_password_change_instruction: "If you didn't request this, please ignore this email. Your password won't change until you access the link above and create a new one."
+    requested_password_change_instructions: "If you didn't request this, please ignore this email. Your password won't change until you access the link above and create a new one."
     welcome: "Welcome"
+
+  account:
+    delete_confirm: "Are you sure you want to delete your account?"
 
 
 

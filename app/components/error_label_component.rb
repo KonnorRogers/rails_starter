@@ -1,4 +1,4 @@
-class FormErrorComponent < ApplicationComponent
+class ErrorLabelComponent < ApplicationComponent
   option :error, proc(&:to_s)
   option :slot, optional: true
   option :variant, proc(&:to_sym), default: proc { :danger }

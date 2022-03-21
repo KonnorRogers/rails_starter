@@ -1,42 +1,37 @@
-<kpc-container style="margin-top: var(--sl-spacing-4x-large);">
-  <sl-card>
-    <h2 slot="header"><%= t("auth.login") %></h2>
+<sl-card>
+  <h2 slot="header"><%= t("auth.login") %></h2>
 
-    <%= render "users/shared/error_messages", resource: resource %>
-    <%= form_with(model: resource, url: session_path(resource_name), data: { controller: "devise", remote: "true" }) do |f| %>
-      <%= render FlashComponent.new(
-        variant: "warning", message: "", closable: false,
-        html_attributes: { "hidden" => true, "data-devise-target" => "alert" }
-      ) %>
+  <%= form_with(model: resource, url: session_path(resource_name), data: { controller: "devise", remote: "true" }) do |f| %>
+    <%= render FlashComponent.new(
+      variant: "warning", message: "", closable: false,
+      html_attributes: { "hidden" => true, "data-devise-target" => "alert" }
+    ) %>
 
-      <kpc-form-group>
-        <%= sl_email **form_fields(resource, :email), label: "Email" %>
+    <kpc-form-group size="medium">
+      <%= sl_email **form_fields(resource, :email), label: "Email" %>
+    </kpc-form-group>
+
+    <kpc-form-group size="medium">
+      <%= sl_password autocomplete: "current-password", **form_fields(resource, :password) %>
+      <kpc-link variant="default" style="margin-top: var(--sl-spacing-2x-small);" href="<%= new_password_path(resource_name) %>">
+        <%= t("auth.forgot_password") %>
+      </kpc-link>
+    </kpc-form-group>
+
+    <% if devise_mapping.rememberable? %>
+      <kpc-form-group size="medium">
+        <%= sl_checkbox(checked: resource.remember_me.present? ? "" : nil, **form_fields(resource, :remember_me)) do %>
+          <%= t("auth.remember_me") %>
+        <% end %>
       </kpc-form-group>
-
-      <kpc-form-group>
-        <%= sl_password autocomplete: "current-password", **form_fields(resource, :password), label: "Password" %>
-        <kpc-link style="margin-top: var(--sl-spacing-2x-small);" href="<%= new_password_path(resource_name) %>">
-          <%= t("auth.forgot_password") %>
-        </kpc-link>
-      </kpc-form-group>
-
-      <% if devise_mapping.rememberable? %>
-        <kpc-form-group>
-          <input type="hidden" value="0" name="<%= form_name resource, :remember_me %>">
-          <sl-checkbox value="1" name="<%= form_name resource, :remember_me %>"
-                      <%= checked_html(resource.remember_me) %>>
-            <%= t("auth.remember_me") %>
-          </sl-checkbox>
-        </kpc-form-group>
-      <% end %>
-
-      <sl-button-group>
-        <%= sl_submit { t("auth.login") } %>
-      </sl-button-group>
     <% end %>
 
-    <div slot="footer">
-      <%= render "users/shared/links" %>
-    </div>
-  </sl-card>
-</kpc-container>
+    <sl-button-group>
+      <%= sl_submit { t("auth.login") } %>
+    </sl-button-group>
+  <% end %>
+
+  <div slot="footer">
+    <%= render "users/actions" %>
+  </div>
+</sl-card>

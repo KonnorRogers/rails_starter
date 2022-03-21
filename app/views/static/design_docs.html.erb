@@ -1,40 +1,38 @@
-<kpc-container>
-  <h2 id="flashes"><kpc-link href="#flashes">Flashes!</kpc-link></h2>
-  <% ApplicationController._flash_types.each do |type| %>
-    <div style="margin-bottom: 3rem;">
-      <p>
-        <code><%= "render FlashComponent.new(variant: :#{type}, message: <string>)" %></code>
-      </p>
-      <%= render FlashComponent.new(variant: type, message: "I'm a :#{type} flash!") %>
-    </div>
-  <% end %>
-
-  <h2 id="links" style="margin-top: 2rem;"><kpc-link href="#links">Links!</kpc-link></h2>
-  <% ["default", "success", "neutral", "warning", "danger"].each do |type| %>
-    <div id="<%= "link-#{type}" %>" style="display: flex; flex-direction: column;">
-      <p>
-        <code><%= "<kpc-link href='#link-#{type}' type='#{type}'> #{type} link </kpc-link> "%></code>
-      </p>
-      <kpc-link href="<%= "#link-#{type}" %>" type="<%= type %>" style="margin: 0 1rem 1rem; width: auto;">
-        <%= type %> link!
-      </kpc-link>
-    </div>
-  <% end %>
-
-  <h2 id="containers" style="margin-top: 2rem;"><kpc-link href="#containers">Containers</kpc-link></h2>
-  <% container_sizes = {
-    "default" => "1536px",
-    "x-small" => "400px",
-    "small" => "640px",
-    "medium" => "768px",
-    "large" => "1028px",
-    "x-large" => "1280px",
-  } %>
-  <% container_sizes.each do |size, max_width| %>
-    <p style="margin-bottom: 2rem;">
-      <%= "max-width: #{max_width};" %>
-      <br>
-      <code><%= "<kpc-container size='#{size}'></kpc-container>" %></code>
+<h2 id="flashes"><kpc-link href="#flashes">Flashes!</kpc-link></h2>
+<% ApplicationController._flash_types.each do |type| %>
+  <div style="margin-bottom: 3rem;">
+    <p>
+      <code><%= "render FlashComponent.new(variant: :#{type}, message: <string>)" %></code>
     </p>
-  <% end %>
-</kpc-container>
+    <%= render FlashComponent.new(variant: type, message: "I'm a :#{type} flash!") %>
+  </div>
+<% end %>
+
+<h2 id="links" style="margin-top: 2rem;"><kpc-link href="#links">Links!</kpc-link></h2>
+<% ["default", "success", "neutral", "warning", "danger"].each do |variant| %>
+  <div id="<%= "link-#{variant}" %>" style="display: flex; flex-direction: column;">
+    <p>
+      <code><%= "<kpc-link href='#link-#{variant}' variant='#{variant}'> #{variant} link </kpc-link> "%></code>
+    </p>
+    <kpc-link href="<%= "#link-#{variant}" %>" variant="<%= variant %>" style="margin: 0 1rem 1rem; width: auto;">
+      <%= variant %> link!
+    </kpc-link>
+  </div>
+<% end %>
+
+<h2 id="containers" style="margin-top: 2rem;"><kpc-link href="#containers">Containers</kpc-link></h2>
+<% container_sizes = {
+  "xx-large" => "1536px",
+  "x-small" => "400px",
+  "small" => "640px",
+  "medium" => "768px",
+  "large" => "1028px",
+  "x-large" => "1280px",
+} %>
+<% container_sizes.each do |size, max_width| %>
+  <p style="margin-bottom: 2rem;">
+    <%= "max-width: #{max_width};" %>
+    <br>
+    <code><%= "<kpc-container size='#{size}'></kpc-container>" %></code>
+  </p>
+<% end %>

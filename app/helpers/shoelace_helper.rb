@@ -10,20 +10,22 @@ module ShoelaceHelper
 
   def sl_submit(**options, &block)
     options[:name] = options.fetch(:name, "commit")
+    options[:variant] = options.fetch(:variant, "default")
+    options[:size] = options.fetch(:size, "medium")
     sl_tag("button", type: "submit", **options, &block)
   end
 
   def sl_input(**options, &block)
+    options[:size] = options.fetch(:size, "medium")
     if options[:error]
-      options[:class] = options[:class].to_s + " form-error"
-      error = render(FormErrorComponent.new(slot: "help-text", error: options[:error]))
+      error = render(ErrorLabelComponent.new(slot: "help-text", error: options[:error]))
 
       block_with_error = proc {
         concat block&.call
         concat error
       }
 
-      options.delete(:error)
+      options[:error] = ""
       return sl_tag("input", **options, &block_with_error)
     end
 
@@ -38,7 +40,30 @@ module ShoelaceHelper
   end
 
   def sl_password(**options, &block)
+    options[:"toggle-password"] = options.fetch(:"toggle-password", "")
     sl_input(type: "password", **options, &block)
+  end
+
+  def sl_checkbox(**options, &block)
+    # Create a hidden checkbox to send back a value to the server.
+    concat tag.input(type: "hidden", value: "0", name: options[:name])
+
+    options[:value] ||= "1"
+    options[:checked] = options.fetch(:checked, options[:value].present? ? "" : nil)
+
+    if options[:error]
+      error = render(ErrorLabelComponent.new(error: options[:error]))
+
+      block_with_error = proc {
+        concat block&.call
+        concat error
+      }
+
+      options[:error] = ""
+      return sl_tag("checkbox", **options, &block_with_error)
+    end
+
+    return sl_tag("checkbox", **options, &block)
   end
 
   # @see https://github.com/rails/rails/blob/main/actionview/lib/action_view/helpers/url_helper.rb#L209
@@ -47,6 +72,7 @@ module ShoelaceHelper
     options ||= {}
 
     html_options = convert_options_to_data_attributes(options, html_options)
+    html_options["variant"] ||= "default"
 
     url = url_target(name, options)
     html_options["href"] ||= url

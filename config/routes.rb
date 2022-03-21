@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     masquerades: "users/masquerades",
     registrations: "users/registrations",
+    passwords: "users/passwords",
+    confirmations: "users/confirmations",
     sessions: "users/sessions"
   }
 

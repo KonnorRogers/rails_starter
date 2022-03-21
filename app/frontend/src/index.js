@@ -10,15 +10,19 @@ export function asPromise (callback, ...args) {
 
 export function preventDoubleClick () {
   window.addEventListener("click", (event) => {
+    if (event.defaultPrevented) return
     if (!clickEventIsSignificant(event)) return
+
     const target = (event.composedPath && event.composedPath()) || event.target
 
     const submitBtn = findSubmitButton(target)
     if (submitBtn == null) return
     if (submitBtn.hasAttribute("loading")) return
+    if (submitBtn.closest("form")?.querySelector("[invalid]") != null) return
+    if (submitBtn.getAttribute("data-confirmed") === "false") return
 
     submitBtn.setAttribute("loading", "")
-    submitBtn.formSubmitController.submit()
+    submitBtn.formSubmitController.submit(submitBtn)
 
   }, { capture: true })
 }

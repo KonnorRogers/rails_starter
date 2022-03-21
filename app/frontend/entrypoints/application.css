@@ -1,5 +1,17 @@
 @import '@shoelace-style/shoelace/dist/themes/light.css';
 
+:root {
+  --text-color-danger: var(--sl-color-red-800);
+  --text-color-danger-focus: var(--sl-color-red-600);
+  --text-color-danger-hover: var(--sl-color-red-600);
+
+  --font-size-medium-large: 1.15rem;
+
+  --border-color-danger: var(--sl-color-red-800);
+  --border-color-danger-focus: var(--sl-color-red-600);
+  --border-color-danger-hover: var(--sl-color-red-600);
+}
+
 *,
 *::before,
 *::after {
@@ -23,20 +35,20 @@ p {
   padding: 0;
 }
 
-.form-group-error,
-.form-error {
-  --sl-input-border-color: var(--sl-color-danger-500);
-  --sl-input-border-color-focus: var(--sl-color-danger-400);
-  --sl-input-border-color-hover: var(--sl-color-danger-400);
+[error] {
+  --sl-input-border-color: var(--text-color-danger);
+  --sl-input-border-color-focus: var(--border-color-danger-focus);
+  --sl-input-border-color-hover: var(--border-color-danger-hover);
 
-  --sl-input-background-color: var(--sl-color-danger-50);
+  --sl-input-background-color: var(--sl-color-danger-100);
   --sl-input-background-color-hover: var(--sl-color-danger-50);
   --sl-input-background-color-focus: var(--sl-color-danger-50);
 
-  --sl-input-color: var(--sl-color-danger-500);
-  --sl-input-icon-color: var(--sl-color-danger-400);
-  --sl-input-label-color: var(--sl-color-danger-500);
-  --sl-input-help-text-color: var(--sl-color-danger-400);
+  --sl-input-color: var(--text-color-danger);
+  --sl-input-icon-color: var(--text-color-danger);
+  --sl-input-icon-color-hover: var(--text-color-danger);
+  --sl-input-label-color: var(--text-color-danger);
+  --sl-input-help-text-color: var(--text-color-danger);
 
   /* Clean this up, this is the HSL of --sl-color-red-500 */
   --sl-focus-ring: 0 0 0 var(--sl-focus-ring-width) hsl(0 84.2% 60.2% / var(--sl-focus-ring-alpha))
@@ -44,4 +56,20 @@ p {
 
 :where(:not(:defined)) {
   visibility: hidden;
+}
+
+
+.dialog::part(title) {
+  padding-bottom: 0.25em;
+}
+
+.dialog__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.dialog__body {
+  font-size: var(--font-size-medium-large);
+  text-align: center;
 }

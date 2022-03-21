@@ -1,23 +1,15 @@
-<kpc-container style="margin-top: var(--sl-spacing-4x-large);">
-  <sl-card>
-    <h1 slot="header">Welcome to your new app!</h1>
-    <p>Feel free to play around!</p>
+<sl-card>
+  <h1 slot="header">Welcome to your new app!</h1>
+  <p>Feel free to play around!</p>
 
-    <div slot="footer">
-      <% if user_signed_in? %>
-        <%= render "users/logout" %>
-      <% else %>
-        <%= render "users/login" %>
-        <br>
-        <%= render "users/signup" %>
-      <% end %>
+  <div slot="footer">
+    <%= render "users/actions" %>
 
-      <% if Rails.env.development? %>
-        <br>
-        <kpc-link href="<%= __design_docs_path %>">
-          Design docs
-        </kpc-link>
-      <% end %>
-    </div>
-  </sl-card>
-</kpc-container>
+    <% if Rails.env.development? %>
+      <br>
+      <kpc-link variant="default" href="<%= __design_docs_path %>">
+        Design docs
+      </kpc-link>
+    <% end %>
+  </div>
+</sl-card>

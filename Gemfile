@@ -11,8 +11,9 @@ gem "anyway_config", "~> 2.0" # Configuration for the modern world.
 gem "all_futures", github: "leastbad/all_futures"
 gem "action_policy", "~> 0.5" # Authorization
 gem "bootsnap", "~> 1.4", require: false # Reduces boot times through caching; required in config/boot.rb
-gem "cable_ready", "~> 5.0.0.pre7"
-gem "devise", "~> 4.8" # Authentication
+gem "cable_ready", "~> 5.0.0.pre8"
+# gem "devise", "~> 4.8" # Authentication
+gem "devise", github: "paramagicdev/devise", branch: "konnor/add-status-codes"
 
 # Dry gems
 gem "dry-initializer", "~> 3.0"
@@ -25,7 +26,7 @@ gem "oauth2", "~> 1.4" # OAuth...duh
 gem "pg", "~> 1.1" # Use postgresql as the database for Active Record
 gem "puma", "~> 5.0" # Use Puma as the app server
 gem "sidekiq", "~> 6.3" # Background jobs
-gem "stimulus_reflex", "~> 3.5.0.pre7"
+gem "stimulus_reflex", "~> 3.5.0.pre8"
 gem "redis", "~> 4.0" # Use Redis adapter to run Action Cable in production
 gem "redis-session-store", "~> 0.11" # Session store...for Redis
 gem "turbo-rails", "~> 0.8.3" # Turbo helpers
@@ -35,6 +36,7 @@ gem "vite_rails", "~> 3.0" # Transpile app-like JavaScript
 
 group :development do
   gem "brakeman", "~> 5.0", require: false # Security
+  gem "letter_opener", "~> 1.8"
   gem "listen", "~> 3.3", require: false # Listen to file changes
   gem "memory_profiler", "~> 1.0" # Profiling
   gem "rack-mini-profiler", "~> 2.0", require: false # Profiling
@@ -52,3 +54,4 @@ group :test do
   gem "faker", "~> 2.16", ">= 2.16"
   gem "webmock", "~> 3" # Mock HTTP calls
 end
+

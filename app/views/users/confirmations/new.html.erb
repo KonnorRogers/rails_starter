@@ -4,24 +4,20 @@
   }
 </style>
 
-<kpc-container style="margin-top: var(--sl-spacing-4x-large);">
-  <sl-card style="width: 100%;">
-    <h2 slot="header"><%= t("auth.resend_confirmation") %></h2>
+<sl-card style="width: 100%;">
+  <h2 slot="header"><%= t("auth.resend_confirmation") %></h2>
 
-    <%= form_with(model: resource, url: confirmation_path(resource_name), method: :post) do |f| %>
-      <%= render "users/shared/error_messages", resource: resource %>
+  <%= form_with(model: resource, url: confirmation_path(resource_name), method: :post) do |f| %>
+    <kpc-form-group size="medium">
+      <%= sl_email **form_fields(resource, :email).merge({ value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) }) %>
+    </kpc-form-group>
 
-      <kpc-form-group>
-        <%= sl_tag "input", type: "email", autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), name: form_name(resource, :email), id: form_id(resource, :email), label: "Email" %>
-      </kpc-form-group>
+    <sl-button-group style="margin: 0 auto;">
+      <%= sl_submit { t("auth.resend_confirmation") } %>
+    </sl-button-group>
+  <% end %>
 
-      <sl-button-group style="margin: 0 auto;">
-        <%= sl_submit { t("auth.resend_confirmation") } %>
-      </sl-button-group>
-    <% end %>
-
-    <div slot="footer">
-      <%= render "users/shared/links" %>
-    </div>
-  </sl-card>
-</kpc-container>
+  <div slot="footer">
+    <%= render "users/actions" %>
+  </div>
+</sl-card>

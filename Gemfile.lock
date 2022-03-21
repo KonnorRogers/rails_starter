@@ -9,6 +9,18 @@ GIT
       activesupport (>= 4.0)
       kredis (~> 1.0)
 
+GIT
+  remote: https://github.com/paramagicdev/devise.git
+  revision: 82aea29891944cddda54cf0b2c76061646445eda
+  branch: konnor/add-status-codes
+  specs:
+    devise (4.8.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -81,14 +93,14 @@ GEM
     anyway_config (2.2.2)
       ruby-next-core (>= 0.11.0)
     ast (2.4.2)
-    bcrypt (3.1.16)
+    bcrypt (3.1.17)
     bindex (0.8.1)
     bootsnap (1.9.1)
       msgpack (~> 1.0)
     brakeman (5.1.2)
     builder (3.2.4)
     byebug (11.1.3)
-    cable_ready (5.0.0.pre7)
+    cable_ready (5.0.0.pre8)
       rails (>= 5.2)
       thread-local (>= 1.1.0)
     capybara (3.36.0)
@@ -109,12 +121,6 @@ GEM
     cuprite (0.13)
       capybara (>= 2.1, < 4)
       ferrum (~> 0.11.0)
-    devise (4.8.1)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 4.1.0)
-      responders
-      warden (~> 1.2.3)
     dry-cli (0.7.0)
     dry-initializer (3.0.4)
     dry-initializer-rails (3.1.1)
@@ -165,10 +171,14 @@ GEM
     kredis (1.0.1)
       activesupport (>= 6.0.0)
       redis (~> 4.2)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    loofah (2.14.0)
+    loofah (2.15.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -288,8 +298,8 @@ GEM
       rubocop-performance (= 1.11.5)
     standardrb (1.0.0)
       standard
-    stimulus_reflex (3.5.0.pre7)
-      cable_ready (= 5.0.0.pre7)
+    stimulus_reflex (3.5.0.pre8)
+      cable_ready (= 5.0.0.pre8)
       nokogiri
       rack
       rails (>= 5.2)
@@ -340,10 +350,10 @@ DEPENDENCIES
   bootsnap (~> 1.4)
   brakeman (~> 5.0)
   byebug
-  cable_ready (~> 5.0.0.pre7)
+  cable_ready (~> 5.0.0.pre8)
   capybara (>= 3.26)
   cuprite
-  devise (~> 4.8)
+  devise!
   dry-initializer (~> 3.0)
   dry-initializer-rails (~> 3.1)
   evil_systems
@@ -351,6 +361,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   kredis (~> 1.0)
+  letter_opener (~> 1.8)
   listen (~> 3.3)
   memory_profiler (~> 1.0)
   oauth2 (~> 1.4)
@@ -364,7 +375,7 @@ DEPENDENCIES
   sidekiq (~> 6.3)
   stackprof (~> 0.2)
   standardrb (~> 1.0)
-  stimulus_reflex (~> 3.5.0.pre7)
+  stimulus_reflex (~> 3.5.0.pre8)
   turbo-rails (~> 0.8.3)
   tzinfo-data (~> 1.0)
   view_component (~> 2.45)

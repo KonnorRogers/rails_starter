@@ -1,6 +1,6 @@
 <h2><%= t("edit") + " " + resource_name.to_s.humanize %></h2>
 
-<%= form_with(model: resource, url: registration_path(resource_name), data: { controller: "confirm", action: "submit->confirm#show:capture" }, method: :put, local: false) do |f| %>
+<%= form_with(model: resource, url: registration_path(resource_name), method: :put, local: false) do |f| %>
   <%= render "users/registrations/email_field", resource: resource %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -11,23 +11,17 @@
   <%= render "users/registrations/change_password_field", resource: resource %>
   <%= render "users/registrations/confirm_password_field", resource: resource %>
 
-  <kpc-form-group>
+  <kpc-form-group size="medium">
     <%= sl_submit { t("update") } %>
   </kpc-form-group>
 
-  <kpc-form-group>
-    <button type="submit" formmethod="delete" formaction="<%= registration_path(resource_name) %>">
-      <%= t("auth.cancel") %>
-    </button>
-    <%= sl_submit variant: "danger", formmethod: :delete, formaction: registration_path(resource_name) do %>
+  <kpc-form-group size="medium" data-controller="dialog">
+    <%= sl_submit variant: "danger", formmethod: :delete, data: { action: "click->dialog#show:capture", confirmed: "false" } do %>
       <%= t("auth.cancel") %>
     <% end %>
 
-    <sl-dialog data-confirm-target="dialog" label="Are you sure?" class="dialog-overview">
-      <sl-button-group slot="footer">
-        <sl-button data-action="click->confirm#hide">Cancel</sl-button>
-        <sl-button variant="danger" data-action="click->confirm#confirm">Confirm</sl-button>
-      </sl-button-group>
-    </sl-dialog>
+    <%= render DialogComponent.new("data-dialog-target": "dialog", label: t("dialog")) do %>
+      <div slot="header"><%= t("account.delete_confirm") %></div>
+    <% end %>
   </kpc-form-group>
 <% end %>

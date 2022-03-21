@@ -1,15 +1,13 @@
 <h2><%= t("auth.resend_unlock") %></h2>
 
 <%= form_with(model: resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
-
-  <kpc-form-group>
-    <%= sl_email_field **form_fields(resource, :email), label: "Email" %>
+  <kpc-form-group size="medium">
+    <%= sl_email_field **form_fields(resource, :email) %>
   </kpc-form-group>
 
-  <sl-button-group>
+  <sl-button-group size="medium">
     <%= sl_submit { t("auth.resend_unlock") } %>
   </sl-button-group>
 <% end %>
 
-<%= render "users/shared/links" %>
+<%= render "users/actions" %>

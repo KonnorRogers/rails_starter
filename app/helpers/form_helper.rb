@@ -77,7 +77,7 @@ module FormHelper
       name: form_name(resource, symbol),
       value: form_value(resource, symbol),
       label: form_label(resource, symbol),
-      error: error_for(resource, symbol)
+      error: error_for(resource, symbol),
     }
   end
 

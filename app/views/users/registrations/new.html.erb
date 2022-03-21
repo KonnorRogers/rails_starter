@@ -1,18 +1,16 @@
-<kpc-container style="margin-top: var(--sl-spacing-4x-large);">
-  <sl-card>
-    <h2 slot="header"><%= t("auth.signup") %></h2>
+<sl-card>
+  <h2 slot="header"><%= t("auth.signup") %></h2>
 
-    <%= form_with(model: resource, url: registration_path(resource_name), local: false) do |f| %>
-      <%= render "email_field", resource: resource %>
-      <%= render "new_password_field", resource: resource %>
+  <%= form_with(model: resource, url: registration_path(resource_name), local: false) do |f| %>
+    <%= render "email_field", resource: resource %>
+    <%= render "new_password_field", resource: resource %>
 
-      <sl-button-group>
-        <%= sl_submit { t("auth.signup") } %>
-      </sl-button-group>
-    <% end %>
+    <sl-button-group>
+      <%= sl_submit { t("auth.signup") } %>
+    </sl-button-group>
+  <% end %>
 
-    <div slot="footer">
-      <%= render "users/shared/links" %>
-    </div>
-  </sl-card>
-</kpc-container>
+  <div slot="footer">
+    <%= render "users/actions" %>
+  </div>
+</sl-card>
