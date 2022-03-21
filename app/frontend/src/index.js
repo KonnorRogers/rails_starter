@@ -19,7 +19,7 @@ export function preventDoubleClick () {
     if (submitBtn == null) return
     if (submitBtn.hasAttribute("loading")) return
     if (submitBtn.closest("form")?.querySelector("[invalid]") != null) return
-    if (submitBtn.getAttribute("data-confirmed") === "false") return
+    if (submitBtn.hasAttribute("needs-confirmation")) return
 
     submitBtn.setAttribute("loading", "")
     submitBtn.formSubmitController.submit(submitBtn)

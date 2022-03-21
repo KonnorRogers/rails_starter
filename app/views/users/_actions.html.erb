@@ -1,13 +1,13 @@
 <% if user_signed_in? %>
-  <%= render "users/logout" %>
+  <%= render "users/logout_link" %>
   <br>
-  <%= render "users/edit" %>
+  <%= render "users/edit_link" %>
 <% else %>
-  <%= render "users/login" %>
+  <%= render "users/login_link" %>
   <br>
-  <%= render "users/signup" %>
+  <%= render "users/signup_link" %>
   <br>
   <% if controller_name != "confirmations" %>
-    <%= render "users/confirmation" %>
+    <%= render "users/confirmation_link" %>
   <% end %>
 <% end %>

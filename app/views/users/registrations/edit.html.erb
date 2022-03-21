@@ -16,7 +16,7 @@
   </kpc-form-group>
 
   <kpc-form-group size="medium" data-controller="dialog">
-    <%= sl_submit variant: "danger", formmethod: :delete, data: { action: "click->dialog#show:capture", confirmed: "false" } do %>
+    <%= sl_submit variant: "danger", formmethod: :delete, "needs-confirmation": "", data: { action: "click->dialog#show:capture" } do %>
       <%= t("auth.cancel") %>
     <% end %>
 

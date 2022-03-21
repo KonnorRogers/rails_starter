@@ -4,17 +4,16 @@ export default class DialogController extends Controller {
   static targets = ["dialog"]
 
   get confirmedAttr () {
-    return "data-confirmed"
+    return "needs-confirmation"
   }
 
   show (event) {
-    if (event.currentTarget.getAttribute(this.confirmedAttr) === "false") {
-      this.trigger = event.currentTarget
-      event.preventDefault()
-      event.stopImmediatePropagation()
-      console.log(this.trigger)
-      this.dialogTarget.show()
-    }
+    if (!event.currentTarget.hasAttribute(this.confirmedAttr)) return
+
+    this.trigger = event.currentTarget
+    event.preventDefault()
+    event.stopImmediatePropagation()
+    this.dialogTarget.show()
   }
 
   hide () {
@@ -26,15 +25,11 @@ export default class DialogController extends Controller {
   }
 
   confirm () {
-    this.trigger.setAttribute(this.confirmedAttr, "true")
+    this.trigger.removeAttribute(this.confirmedAttr)
     this.trigger.click()
     this.hide()
 
-    setTimeout(() => this.afterConfirm())
-  }
-
-  afterConfirm () {
-    this.trigger.setAttribute(this.confirmedAttr, "false")
+    this.trigger.setAttribute(this.confirmedAttr, "")
     this.trigger = undefined
   }
 }
