@@ -9,6 +9,7 @@ specifiers:
   '@web/test-runner': ^0.13.22
   autoprefixer: ^10.4.0
   cable_ready: https://github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz
+  konnors-pc: ^0.0.4
   lit: ^2.0.2
   mrujs: 0.9.0
   postcss: ^8.4.5
@@ -34,6 +35,7 @@ dependencies:
   '@web/test-runner': 0.13.22
   autoprefixer: 10.4.0_postcss@8.4.5
   cable_ready: '@github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz'
+  konnors-pc: 0.0.4_75fe39f29840d3ad5eb86d1d3b81cd54
   lit: 2.0.2
   mrujs: 0.9.0
   postcss: 8.4.5
@@ -652,7 +654,7 @@ packages:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
     dependencies:
-      debug: 4.3.2
+      debug: 4.3.3
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1720,7 +1722,7 @@ packages:
     engines: {node: '>= 10.17.0'}
     hasBin: true
     dependencies:
-      debug: 4.3.2
+      debug: 4.3.3
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -2013,7 +2015,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.2
+      debug: 4.3.3
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -2379,6 +2381,15 @@ packages:
       vary: 1.1.2
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /konnors-pc/0.0.4_75fe39f29840d3ad5eb86d1d3b81cd54:
+    resolution: {integrity: sha512-YEKu0ikWJwEPIG33uVSXowrl5L9ddZwhuj472xgXfdn4DZsi/+H+R0hO0zseoqCaweUvSr14U/4kF7SG08uZXg==}
+    peerDependencies:
+      '@shoelace-style/shoelace': '>= 2.0.0-beta.72'
+    dependencies:
+      '@shoelace-style/shoelace': 2.0.0-beta.72
+      lit: 2.2.1
     dev: false
 
   /levn/0.4.1:
