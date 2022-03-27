@@ -7,7 +7,7 @@ class ActiveSupport::TestCase
   parallelize(workers: :number_of_processors)
 
   parallelize_setup do |i|
-    ActiveStorage::Blob.service.instance_variable_set(:@root, "#{ActiveStorage::Blob.service.root}-#{i}")
+    ActiveStorage::Blob.service.root = "#{ActiveStorage::Blob.service.root}-#{i}"
   end
 
   parallelize_teardown do
@@ -24,7 +24,7 @@ class ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   parallelize_setup do |i|
-    ActiveStorage::Blob.service.instance_variable_set(:@root, "#{ActiveStorage::Blob.service.root}-#{i}")
+    ActiveStorage::Blob.service.root = "#{ActiveStorage::Blob.service.root}-#{i}"
   end
 
   def after_teardown
@@ -40,6 +40,4 @@ class ActionDispatch::IntegrationTest
   def devise_scope(scope)
     @request.env['devise.mapping'] = Devise.mappings[scope.to_sym]
   end
-
-
 end

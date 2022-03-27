@@ -13,8 +13,8 @@ gem "action_policy", "~> 0.5" # Authorization
 gem "bootsnap", "~> 1.4", require: false # Reduces boot times through caching; required in config/boot.rb
 gem "cable_ready", "~> 5.0.0.pre8"
 # gem "devise", "~> 4.8" # Authentication
-# gem "devise", github: "paramagicdev/devise", branch: "konnor/add-status-codes"
-gem "devise", path: "../../oss/devise/"
+gem "devise", github: "paramagicdev/devise", branch: "konnor/add-status-codes"
+gem "devise_masquerade", "~> 1.3"
 
 # Dry gems
 gem "dry-initializer", "~> 3.0"
@@ -50,9 +50,12 @@ end
 group :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw] # Call 'byebug' anywhere to stop execution and get a debugger console
   gem "capybara", ">= 3.26" # Adds support for Capybara system testing and cuprite driver
-  gem "cuprite" # CDP based browser driver
-  gem "evil_systems" # System test helpers
+  gem "cuprite", "~> 0.13"
+  gem "evil_systems", "~> 1.0" # System test helpers
   gem "faker", "~> 2.16", ">= 2.16"
   gem "webmock", "~> 3" # Mock HTTP calls
 end
 
+gem "pagy", "~> 5.10"
+
+gem "noticed", "~> 1.5"

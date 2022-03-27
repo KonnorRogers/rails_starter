@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   root "static#index"
 
@@ -13,6 +15,10 @@ Rails.application.routes.draw do
     get "/signup", to: "users/registrations#new"
     get "/login", to: "users/sessions#new"
     delete "/logout", to: "users/sessions#destroy"
+  end
+
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
   end
 
   # Internal
