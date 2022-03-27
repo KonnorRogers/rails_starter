@@ -20,7 +20,7 @@
       <%= t("auth.cancel") %>
     <% end %>
 
-    <%= render DialogComponent.new("data-dialog-target": "dialog", label: t("dialog")) do %>
+    <%= render DialogComponent.new("data-dialog-target": "dialog", label: t("confirm")) do %>
       <div slot="header"><%= t("account.delete_confirm") %></div>
     <% end %>
   </kpc-form-group>

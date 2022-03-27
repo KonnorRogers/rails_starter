@@ -46,7 +46,7 @@ module ShoelaceHelper
 
   def sl_checkbox(**options, &block)
     # Create a hidden checkbox to send back a value to the server.
-    concat tag.input(type: "hidden", value: "0", name: options[:name])
+    concat tag.input(type: "hidden", value: "", name: options[:name])
 
     options[:value] ||= "1"
     options[:checked] = options.fetch(:checked, options[:value].present? ? "" : nil)

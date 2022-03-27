@@ -13,7 +13,8 @@ gem "action_policy", "~> 0.5" # Authorization
 gem "bootsnap", "~> 1.4", require: false # Reduces boot times through caching; required in config/boot.rb
 gem "cable_ready", "~> 5.0.0.pre8"
 # gem "devise", "~> 4.8" # Authentication
-gem "devise", github: "paramagicdev/devise", branch: "konnor/add-status-codes"
+# gem "devise", github: "paramagicdev/devise", branch: "konnor/add-status-codes"
+gem "devise", path: "../../oss/devise/"
 
 # Dry gems
 gem "dry-initializer", "~> 3.0"

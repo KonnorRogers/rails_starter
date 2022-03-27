@@ -28,9 +28,7 @@ class Users::SessionsController < Devise::SessionsController
   private
 
   def respond_to_on_destroy
-    respond_to do |format|
-      format.any(*navigational_formats) { redirect_to after_sign_out_path_for(resource_name), status: 303 }
-      format.all { head :no_content }
-    end
+    flash[:notice] = I18n.t("auth.signed_out")
+    super
   end
 end
