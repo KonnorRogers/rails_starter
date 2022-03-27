@@ -9,7 +9,7 @@ specifiers:
   '@web/test-runner': ^0.13.22
   autoprefixer: ^10.4.0
   cable_ready: https://github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz
-  konnors-pc: ^0.0.5
+  konnors-pc: ^0.0.6
   lit: ^2.0.2
   mrujs: 0.9.0
   postcss: ^8.4.5
@@ -36,7 +36,7 @@ dependencies:
   '@web/test-runner': 0.13.22
   autoprefixer: 10.4.0_postcss@8.4.5
   cable_ready: '@github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz'
-  konnors-pc: 0.0.5_75fe39f29840d3ad5eb86d1d3b81cd54
+  konnors-pc: 0.0.6_75fe39f29840d3ad5eb86d1d3b81cd54
   lit: 2.0.2
   mrujs: 0.9.0
   postcss: 8.4.5
@@ -2429,13 +2429,14 @@ packages:
       - supports-color
     dev: false
 
-  /konnors-pc/0.0.5_75fe39f29840d3ad5eb86d1d3b81cd54:
-    resolution: {integrity: sha512-WvgB2JyBGPVUTs4WQM7cwlJwAZYj+bleaxb3JEbH7ddTw78V7qfaevsbIpdsolfm/IJHKSUVcFhDKiYnLtpquQ==}
+  /konnors-pc/0.0.6_75fe39f29840d3ad5eb86d1d3b81cd54:
+    resolution: {integrity: sha512-hX2PPM8+gjszpbSsLlfGu7GwyZYxk+BbLjBkWh7X1fZ6cRBZkFT/LItHhReW9OtnryzQtn96nv88wmvWe24clA==}
     peerDependencies:
       '@shoelace-style/shoelace': '>= 2.0.0-beta.72'
     dependencies:
       '@shoelace-style/shoelace': 2.0.0-beta.72
       lit: 2.2.1
+      tslib: 2.3.1
     dev: false
 
   /levn/0.4.1:
