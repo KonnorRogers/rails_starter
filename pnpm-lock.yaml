@@ -9,7 +9,7 @@ specifiers:
   '@web/test-runner': ^0.13.22
   autoprefixer: ^10.4.0
   cable_ready: https://github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz
-  konnors-pc: ^0.0.4
+  konnors-pc: ^0.0.5
   lit: ^2.0.2
   mrujs: 0.9.0
   postcss: ^8.4.5
@@ -21,6 +21,7 @@ specifiers:
   stimulus: ^3.0.1
   stimulus-vite-helpers: ^1.0.4
   stimulus_reflex: 3.5.0-pre8
+  tslib: ^2.3.1
   vite: ^2.7.3
   vite-plugin-copy: ^0.1.6
   vite-plugin-full-reload: ^0.2.2
@@ -35,7 +36,7 @@ dependencies:
   '@web/test-runner': 0.13.22
   autoprefixer: 10.4.0_postcss@8.4.5
   cable_ready: '@github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz'
-  konnors-pc: 0.0.4_75fe39f29840d3ad5eb86d1d3b81cd54
+  konnors-pc: 0.0.5_75fe39f29840d3ad5eb86d1d3b81cd54
   lit: 2.0.2
   mrujs: 0.9.0
   postcss: 8.4.5
@@ -46,6 +47,7 @@ dependencies:
   stimulus: 3.0.1
   stimulus-vite-helpers: 1.0.4
   stimulus_reflex: 3.5.0-pre8_stimulus@3.0.1
+  tslib: 2.3.1
   vite: 2.7.3
   vite-plugin-copy: 0.1.6
   vite-plugin-full-reload: 0.2.2
@@ -2383,8 +2385,8 @@ packages:
       - supports-color
     dev: false
 
-  /konnors-pc/0.0.4_75fe39f29840d3ad5eb86d1d3b81cd54:
-    resolution: {integrity: sha512-YEKu0ikWJwEPIG33uVSXowrl5L9ddZwhuj472xgXfdn4DZsi/+H+R0hO0zseoqCaweUvSr14U/4kF7SG08uZXg==}
+  /konnors-pc/0.0.5_75fe39f29840d3ad5eb86d1d3b81cd54:
+    resolution: {integrity: sha512-WvgB2JyBGPVUTs4WQM7cwlJwAZYj+bleaxb3JEbH7ddTw78V7qfaevsbIpdsolfm/IJHKSUVcFhDKiYnLtpquQ==}
     peerDependencies:
       '@shoelace-style/shoelace': '>= 2.0.0-beta.72'
     dependencies:
@@ -3815,6 +3817,10 @@ packages:
       minimist: 1.2.5
       strip-bom: 3.0.0
     dev: true
+
+  /tslib/2.3.1:
+    resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
+    dev: false
 
   /tsscmp/1.0.6:
     resolution: {integrity: sha512-LxhtAkPDTkVCMQjt2h6eBVY28KCjikZqZfMcC15YBeNjkgUpdCfBu5HoiOTDu86v6smE8yOjyEktJ8hlbANHQA==}

@@ -13,7 +13,7 @@ require "rails"
   "action_mailbox/engine",
   "action_text/engine",
   "rails/test_unit/railtie",
-  # "sprockets/railtie" No.
+  # "sprockets/railtie", No.
 ].each do |railtie|
   require railtie
 end
@@ -29,7 +29,7 @@ module RailsStarter
     # config.anyway_config.autoload_static_config_path = "config/configs"
     #
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+    # config.load_defaults 6.1
 
     # Configuration for the application, engines, and railties goes here.
     #
