@@ -1,0 +1,2 @@
+module InternalDocs::DesignsHelper
+end

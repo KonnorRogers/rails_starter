@@ -23,7 +23,9 @@ gem "dry-initializer-rails", "~> 3.1" # Allow initializers to take in ActiveReco
 gem "image_processing", "~> 1.2" # Use Active Storage variant
 gem "jbuilder", "~> 2.7" # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "kredis", "~> 1.0" # Work with Redis in an OOP way.
+gem "noticed", "~> 1.5" # Send notifications!
 gem "oauth2", "~> 1.4" # OAuth...duh
+gem "pagy", "~> 5.10" # Pagination!
 gem "pg", "~> 1.1" # Use postgresql as the database for Active Record
 gem "puma", "~> 5.0" # Use Puma as the app server
 gem "sidekiq", "~> 6.3" # Background jobs
@@ -56,6 +58,4 @@ group :test do
   gem "webmock", "~> 3" # Mock HTTP calls
 end
 
-gem "pagy", "~> 5.10"
 
-gem "noticed", "~> 1.5"
