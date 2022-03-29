@@ -15,7 +15,7 @@
     "autoprefixer": "^10.4.0",
     "cable_ready": "https://github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz",
     "konnors-pc": "^0.0.9",
-    "lit": "^2.0.2",
+    "lit": "^2.1.4",
     "mrujs": "0.9.0",
     "postcss": "^8.4.5",
     "postcss-flexbugs-fixes": "^5.0.2",
@@ -32,5 +32,10 @@
     "standard": "^16.0.4",
     "vite": "^2.9.0-beta.3",
     "vite-plugin-ruby": "^3.0.8"
+  },
+  "pnpm": {
+    "overrides": {
+      "lit": "^2.1.4"
+    }
   }
 }
