@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  organization: one
+  accepted_at: 2022-03-28 23:16:56
+  removed_at: 2022-03-28 23:16:56
+  invited_by: one
+
+two:
+  user: two
+  organization: two
+  accepted_at: 2022-03-28 23:16:56
+  removed_at: 2022-03-28 23:16:56
+  invited_by: two

@@ -6,5 +6,12 @@ class User < ApplicationRecord
 
   has_many :organization_memberships
   has_many :organizations, through: :organization_memberships
-  has_many :notifications, as: :recipient
+  has_many :organization_accounts, through: :organization_memberships
+  has_many :notifications, as: :recipient # Noticed
+
+  has_one :selected_account, -> { active_accounts.find_by(selected: true) }
+  has_one :selected_organization, -> { selected_account.organization }
+
+  scope :active_memberships, -> { organization_memberships.active }
+  scope :active_organizations, -> { organizations.where(id: active_memberships.ids) }
 end
