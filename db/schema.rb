@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_27_212814) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_29_030706) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,6 +54,32 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_27_212814) do
     t.index ["recipient_type", "recipient_id"], name: "index_notifications_on_recipient"
   end
 
+  create_table "organization_memberships", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "organization_id"
+    t.bigint "invited_by_id"
+    t.bigint "removed_by_id"
+    t.datetime "accepted_at"
+    t.datetime "removed_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["accepted_at"], name: "index_organization_memberships_on_accepted_at"
+    t.index ["invited_by_id"], name: "index_organization_memberships_on_invited_by_id"
+    t.index ["organization_id"], name: "index_organization_memberships_on_organization_id"
+    t.index ["removed_at"], name: "index_organization_memberships_on_removed_at"
+    t.index ["removed_by_id"], name: "index_organization_memberships_on_removed_by_id"
+    t.index ["user_id"], name: "index_organization_memberships_on_user_id"
+  end
+
+  create_table "organizations", force: :cascade do |t|
+    t.string "organization_name"
+    t.bigint "created_by_id"
+    t.boolean "personal_organization"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["created_by_id"], name: "index_organizations_on_created_by_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -73,4 +99,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_27_212814) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "organization_memberships", "organization_memberships", column: "invited_by_id"
+  add_foreign_key "organization_memberships", "organization_memberships", column: "removed_by_id"
+  add_foreign_key "organization_memberships", "organizations"
+  add_foreign_key "organization_memberships", "users"
+  add_foreign_key "organizations", "users", column: "created_by_id"
 end

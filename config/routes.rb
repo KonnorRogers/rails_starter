@@ -23,9 +23,11 @@ Rails.application.routes.draw do
   end
 
   # Internal
-  resources :internal_docs, only: %i[index]
+  if Rails.env.development?
+    resources :internal_docs, only: %i[index]
 
-  namespace :internal_docs do
-    resources :designs, only: %i[index]
+    namespace :internal_docs do
+      resources :designs, only: %i[index]
+    end
   end
 end

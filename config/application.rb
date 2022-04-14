@@ -13,7 +13,7 @@ require "rails"
   "action_mailbox/engine",
   "action_text/engine",
   "rails/test_unit/railtie",
-  # "sprockets/railtie", No.
+  # "sprockets/railtie", no.
 ].each do |railtie|
   require railtie
 end
