@@ -50,7 +50,8 @@ en:
     confirm_account: "Confirm my account"
     current_password_prompt: "We need your current password to confirm your changes"
     forgot_password: "Forgot your password?"
-    login: "Log in"
+    login: "Login"
+    logout: "Logout"
     minimum_characters: "characters minimum"
     new_password: "New password"
     no_confirmation: "Didn't receive confirmation instructions?"
@@ -62,6 +63,7 @@ en:
     resend_unlock: "Resend unlock instructions"
     send_reset_instructions: Send me reset password instructions
     signup: "Sign up"
+    signed_out: "You have successfully signed out"
     sign_in_with: "Sign in with %{provider}"
     waiting_confirmation: "Currently waiting confirmation for"
 

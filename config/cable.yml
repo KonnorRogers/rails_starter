@@ -4,11 +4,12 @@ default: &default
 
 development:
   <<: *default
-  channel_prefix: cableready_test_development
+  channel_prefix: rails_starter_development
 
 test:
-  adapter: test
+  <<: *default
+  channel_prefix: rails_starter_development
 
 production:
   <<: *default
-  channel_prefix: cableready_test_production
+  channel_prefix: rails_starter_production

@@ -5,7 +5,7 @@
     <%= f.hidden_field :reset_password_token %>
 
     <kpc-form-group size="medium">
-      <%= sl_password **form_fields(resource, :password).except(:label), autocomplete: "new-password" do %>
+      <%= sl_password **resource.form_fields(:password).except(:label), autocomplete: "new-password" do %>
         <label slot="label">
           <%= t("auth.new_password") %>
           <% if @minimum_password_length %>
@@ -17,7 +17,7 @@
 
     <kpc-form-group size="medium">
       <%= sl_password autocomplete: "new-password", label: t("auth.confirm_new_password"),
-                      **form_fields(resource, :password_confirmation).except(:label) %>
+                      **resource.form_fields(:password_confirmation).except(:label) %>
     </kpc-form-group>
 
     <sl-button-group>

@@ -9,11 +9,11 @@
 
   <%= form_with(model: resource, url: session_path(resource_name), data: { remote: "true" }) do |f| %>
     <kpc-form-group size="medium">
-      <%= sl_email **form_fields(resource, :email) %>
+      <%= sl_email **resource.form_fields(:email) %>
     </kpc-form-group>
 
     <kpc-form-group size="medium">
-      <%= sl_password autocomplete: "current-password", **form_fields(resource, :password) %>
+      <%= sl_password autocomplete: "current-password", **resource.form_fields(:password) %>
       <kpc-link variant="default" style="margin-top: var(--sl-spacing-2x-small);" href="<%= new_password_path(resource_name) %>">
         <%= t("auth.forgot_password") %>
       </kpc-link>
@@ -21,7 +21,7 @@
 
     <% if devise_mapping.rememberable? %>
       <kpc-form-group size="medium">
-        <%= sl_checkbox(checked: resource.remember_me.present? ? "" : nil, **form_fields(resource, :remember_me)) do %>
+        <%= sl_checkbox(checked: resource.remember_me.present? ? "" : nil, **resource.form_fields(:remember_me)) do %>
           <%= t("auth.remember_me") %>
         <% end %>
       </kpc-form-group>

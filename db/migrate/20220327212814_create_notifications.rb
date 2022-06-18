@@ -1,6 +1,6 @@
 class CreateNotifications < ActiveRecord::Migration[7.0]
   def change
-    create_table :notifications do |t|
+    create_table :notifications, id: :uuid do |t|
       t.references :recipient, polymorphic: true
       t.string :type, null: false
       t.jsonb :params

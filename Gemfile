@@ -13,7 +13,7 @@ gem "action_policy", "~> 0.5" # Authorization
 gem "bootsnap", "~> 1.4", require: false # Reduces boot times through caching; required in config/boot.rb
 gem "cable_ready", "~> 5.0.0.pre8"
 # gem "devise", "~> 4.8" # Authentication
-gem "devise", github: "paramagicdev/devise", branch: "konnor/add-status-codes"
+gem "devise", github: "paramagicdev/devise", branch: "konnor/configurable-status-codes"
 gem "devise_masquerade", "~> 1.3"
 
 # Dry gems
@@ -44,6 +44,8 @@ group :development do
   gem "memory_profiler", "~> 1.0" # Profiling
   gem "rack-mini-profiler", "~> 2.0", require: false # Profiling
   gem "ruby-prof", "~> 0.16" # More profiling
+  gem "solargraph"
+  gem "solargraph-rails"
   gem "stackprof", "~> 0.2", require: false # Profiling
   gem "standardrb", "~> 1.0", require: false
   gem "web-console", ">= 4.1.0" # interactive console on exception pages or by calling 'console'
@@ -52,6 +54,9 @@ end
 group :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw] # Call 'byebug' anywhere to stop execution and get a debugger console
   gem "capybara", ">= 3.26" # Adds support for Capybara system testing and cuprite driver
+
+  # Can be removed in rails 7
+  gem "selenium-webdriver"
   gem "cuprite", "~> 0.13"
   gem "evil_systems", "~> 1.0" # System test helpers
   gem "faker", "~> 2.16", ">= 2.16"

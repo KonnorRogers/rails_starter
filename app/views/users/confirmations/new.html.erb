@@ -9,7 +9,7 @@
 
   <%= form_with(model: resource, url: confirmation_path(resource_name), method: :post) do |f| %>
     <kpc-form-group size="medium">
-      <%= sl_email **form_fields(resource, :email).merge({ value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) }) %>
+      <%= sl_email **resource.form_fields(:email).merge({ value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) }) %>
     </kpc-form-group>
 
     <sl-button-group style="margin: 0 auto;">
