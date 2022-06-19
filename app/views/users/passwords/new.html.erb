@@ -3,7 +3,7 @@
 
     <%= form_with(model: resource, url: password_path(resource_name), method: :post, data: { remote: "true" }) do |f| %>
       <kpc-form-group size="medium">
-        <%= sl_email label: "Email", **form_fields(resource, :email) %>
+        <%= sl_email label: "Email", **resource.form_fields(:email) %>
       </kpc-form-group>
 
       <sl-button-group>

@@ -54,6 +54,9 @@ end
 group :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw] # Call 'byebug' anywhere to stop execution and get a debugger console
   gem "capybara", ">= 3.26" # Adds support for Capybara system testing and cuprite driver
+
+  # Can be removed in rails 7
+  gem "selenium-webdriver"
   gem "cuprite", "~> 0.13"
   gem "evil_systems", "~> 1.0" # System test helpers
   gem "faker", "~> 2.16", ">= 2.16"

@@ -2,7 +2,7 @@
 
 <%= form_with(model: resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <kpc-form-group size="medium">
-    <%= sl_email_field **form_fields(resource, :email) %>
+    <%= sl_email_field **resource.form_fields(:email) %>
   </kpc-form-group>
 
   <sl-button-group size="medium">

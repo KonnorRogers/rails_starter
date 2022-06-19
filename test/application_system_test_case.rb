@@ -11,7 +11,20 @@ EvilSystems.initial_setup
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   driven_by :evil_cuprite
 
+  LINK_TAG = "kpc-link"
+
   include EvilSystems::Helpers
+  include ActionView::Helpers::TranslationHelper
+  include Devise::Test::IntegrationHelpers
+  include Warden::Test::Helpers
+
+  def current_user_id
+    all("meta[name='current_user']", visible: false).last[:content]
+  end
+
+  def find_by_attr(attr, attr_value, matcher: "=", **options)
+    find("[#{attr}#{matcher}'#{attr_value}']", **options)
+  end
 
   parallelize_setup do |i|
     ActiveStorage::Blob.service.root = "#{ActiveStorage::Blob.service.root}-#{i}"
