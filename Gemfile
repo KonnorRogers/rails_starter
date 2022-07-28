@@ -11,7 +11,7 @@ gem "anyway_config", "~> 2.0" # Configuration for the modern world.
 gem "all_futures", github: "leastbad/all_futures"
 gem "action_policy", "~> 0.5" # Authorization
 gem "bootsnap", "~> 1.4", require: false # Reduces boot times through caching; required in config/boot.rb
-gem "cable_ready", "~> 5.0.0.pre8"
+gem "cable_ready", "~> 5.0.0.pre9"
 # gem "devise", "~> 4.8" # Authentication
 gem "devise", github: "paramagicdev/devise", branch: "konnor/configurable-status-codes"
 gem "devise_masquerade", "~> 1.3"
@@ -29,7 +29,7 @@ gem "pagy", "~> 5.10" # Pagination!
 gem "pg", "~> 1.1" # Use postgresql as the database for Active Record
 gem "puma", "~> 5.0" # Use Puma as the app server
 gem "sidekiq", "~> 6.3" # Background jobs
-gem "stimulus_reflex", "~> 3.5.0.pre8"
+gem "stimulus_reflex", "~> 3.5.0.pre9"
 gem "redis", "~> 4.0" # Use Redis adapter to run Action Cable in production
 gem "redis-session-store", "~> 0.11" # Session store...for Redis
 gem "turbo-rails", "~> 0.8.3" # Turbo helpers

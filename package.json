@@ -8,36 +8,37 @@
   "dependencies": {
     "@esm-bundle/chai": "^4.3.4-fix.0",
     "@hotwired/turbo": "^7.1.0",
-    "@rails/actioncable": "^6.1.5",
-    "@rails/activestorage": "^6.1.5",
+    "@hotwired/stimulus": "^3.1.0",
+    "@rails/actioncable": "^7.0.3-1",
+    "@rails/activestorage": "^7.0.3-1",
     "@shoelace-style/shoelace": "^2.0.0-beta.78",
-    "@web/test-runner": "^0.13.27",
-    "autoprefixer": "^10.4.4",
-    "cable_ready": "https://github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz",
+    "@web/test-runner": "^0.13.31",
+    "autoprefixer": "^10.4.7",
+    "cable_ready": "5.0.0-pre9",
     "konnors-pc": "^0.0.9",
-    "lit": "2.2.8",
-    "mrujs": "0.9.0",
-    "postcss": "^8.4.12",
+    "lit": "^2.2.8",
+    "mrujs": "0.10.1",
+    "postcss": "^8.4.14",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.1.0",
-    "postcss-preset-env": "^7.4.3",
+    "postcss-preset-env": "^7.7.2",
     "rollup-plugin-copy": "^3.4.0",
-    "stimulus": "^3.0.1",
+    "stimulus": "npm:@hotwired/stimulus",
     "stimulus-vite-helpers": "^3.0.0",
-    "stimulus_reflex": "3.5.0-pre8",
+    "stimulus_reflex": "3.5.0-pre9",
     "vite-plugin-copy": "^0.1.6",
-    "vite-plugin-full-reload": "^1.0.0"
+    "vite-plugin-full-reload": "^1.0.3"
   },
   "devDependencies": {
-    "standard": "^16.0.4",
-    "vite": "^2.8.6",
-    "vite-plugin-ruby": "^3.0.8"
+    "standard": "^17.0.0",
+    "vite": "^3.0.3",
+    "vite-plugin-ruby": "^3.1.2"
   },
   "pnpm": {
     "overrides": {
-      "lit": "2.1.4",
-      "lit-html": "2.1.3",
-      "lit-element": "3.1.2"
+      "lit": "2.2.8",
+      "lit-element": "3.2.0",
+      "lit-html": "2.2.4"
     }
   }
 }
