@@ -67,6 +67,6 @@ jobs:
       run: |
         bundle exec rails db:create
         bundle exec rails db:schema:load
-        ./bin/brakeman
+        bundle exec brakeman
         bundle exec rails assets:precompile
         bundle exec rails test:all
