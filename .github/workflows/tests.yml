@@ -8,6 +8,14 @@ jobs:
     services:
       redis:
         image: redis
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s
+          --health-timeout 1s
+          --health-retries 5
+        ports:
+          # Maps port 6379 on service container to the host
+          - 6379:6379
       # Label used to access the service container
       postgres:
         # Docker Hub image
@@ -19,8 +27,8 @@ jobs:
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
+          --health-interval 5s
+          --health-timeout 1s
           --health-retries 5
         ports:
           - "5432:5432"
