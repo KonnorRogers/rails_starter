@@ -65,6 +65,7 @@ jobs:
         POSTGRES_PASSWORD: "password"
         POSTGRES_PORT: "5432"
       run: |
+        bundle exec rails db:create
         bundle exec rails db:schema:load
         ./bin/lint
         ./bin/brakeman

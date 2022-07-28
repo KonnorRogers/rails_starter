@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "setup": "npx pnpm add -g pnpm && pnpm install"
+    "setup": "(pnpm -v || npx pnpm add -g pnpm) && pnpm install"
   },
   "dependencies": {
     "@esm-bundle/chai": "^4.3.4-fix.0",
