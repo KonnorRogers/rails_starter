@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import RubyPlugin from 'vite-plugin-ruby'
 import FullReload from 'vite-plugin-full-reload'
-import * as path from "path"
+import * as path from "node:path"
 import copy from 'rollup-plugin-copy';
 
 const vitePath = `public/shoelace/assets`
