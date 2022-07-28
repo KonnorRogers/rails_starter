@@ -10,12 +10,12 @@ specifiers:
   '@hotwired/turbo': ^7.1.0
   '@rails/actioncable': ^6.1.5
   '@rails/activestorage': ^6.1.5
-  '@shoelace-style/shoelace': ^2.0.0-beta.72
+  '@shoelace-style/shoelace': ^2.0.0-beta.78
   '@web/test-runner': ^0.13.27
   autoprefixer: ^10.4.4
   cable_ready: https://github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz
   konnors-pc: ^0.0.9
-  lit: 2.1.4
+  lit: 2.2.8
   mrujs: 0.9.0
   postcss: ^8.4.12
   postcss-flexbugs-fixes: ^5.0.2
@@ -36,12 +36,12 @@ dependencies:
   '@hotwired/turbo': 7.1.0
   '@rails/actioncable': 6.1.5
   '@rails/activestorage': 6.1.5
-  '@shoelace-style/shoelace': 2.0.0-beta.72
+  '@shoelace-style/shoelace': 2.0.0-beta.78
   '@web/test-runner': 0.13.27
   autoprefixer: 10.4.4_postcss@8.4.12
   cable_ready: '@github.com/cableready/dev-builds/archive/refs/tags/cable_ready/45d772d.tar.gz'
-  konnors-pc: 0.0.9_75fe39f29840d3ad5eb86d1d3b81cd54
-  lit: 2.1.4
+  konnors-pc: 0.0.9_c7a7245da02ef2dd505537d6f41e0f4c
+  lit: 2.2.8
   mrujs: 0.9.0
   postcss: 8.4.12
   postcss-flexbugs-fixes: 5.0.2_postcss@8.4.12
@@ -186,14 +186,14 @@ packages:
       '@types/chai': 4.3.0
     dev: false
 
-  /@floating-ui/core/0.5.1:
-    resolution: {integrity: sha512-LOFg65vdU4o4eZjVKNhu7VXbjdnY0amMw9sydLtKZiCNwj0eMD06rmktbWp9L/f6w6s9Qqe22lkks8PbwYwy4Q==}
+  /@floating-ui/core/0.7.3:
+    resolution: {integrity: sha512-buc8BXHmG9l82+OQXOFU3Kr2XQx9ys01U/Q9HMIrZ300iLc8HLMgh7dcCqgYzAzf4BkoQvDcXf5Y+CuEZ5JBYg==}
     dev: false
 
-  /@floating-ui/dom/0.3.1:
-    resolution: {integrity: sha512-HJX/2xgGPt01YHQNAya2taqg5HDnY6ipF0B0Bk/Th2s4FD9R89Ecw3TEegLLO+VrQnPEGbuHOGJ6Fr3BPM0DYg==}
+  /@floating-ui/dom/0.5.4:
+    resolution: {integrity: sha512-419BMceRLq0RrmTSDxn8hf9R3VCJv2K9PUfugh5JyEFmdjzDo+e8U5EdR8nzKq8Yj1htzLm3b6eQEEam3/rrtg==}
     dependencies:
-      '@floating-ui/core': 0.5.1
+      '@floating-ui/core': 0.7.3
     dev: false
 
   /@hotwired/stimulus-webpack-helpers/1.0.1_@hotwired+stimulus@3.0.1:
@@ -212,12 +212,12 @@ packages:
     resolution: {integrity: sha512-Q8kGjqwPqER+CtpQudbH+3Zgs2X4zb6pBAlr6NsKTXadg45pAOvxI9i4QpuHbwSzR2+x87HUm+rot9F/Pe8rxA==}
     dev: false
 
-  /@lit-labs/react/1.0.2:
-    resolution: {integrity: sha512-jfcHoNsdbxA3vHTnvm4Q08skWFFYvpXRdPZ7Z31oC3lxeKfLR5WGQldr/fTF1Q0gKY3zusLsvX5UiSurV/F+og==}
+  /@lit-labs/react/1.0.7:
+    resolution: {integrity: sha512-ehnOFE5qMPKqApSjclAXyYSqSBWhjuvwF0ZkMJaggmtkGtMvti3gSq/kU5pwBQDgs+71TJWTzWZyQ83hdS8ofw==}
     dev: false
 
-  /@lit/reactive-element/1.3.1:
-    resolution: {integrity: sha512-nOJARIr3pReqK3hfFCSW2Zg/kFcFsSAlIE7z4a0C9D2dPrgD/YSn3ZP2ET/rxKB65SXyG7jJbkynBRm+tGlacw==}
+  /@lit/reactive-element/1.3.4:
+    resolution: {integrity: sha512-I1wz4uxOA52zSBhKmv4KQWLJpCyvfpnDg+eQR6mjpRgV+Ldi14HLPpSUpJklZRldz0fFmGCC/kVmuc/3cPFqCg==}
     dev: false
 
   /@nodelib/fs.scandir/2.1.5:
@@ -279,19 +279,19 @@ packages:
     resolution: {integrity: sha512-Be+cahtZyI2dPKRm8EZSx3YJQ+jLvEcn3xzRP7tM4tqBnvd/eW/64Xh0iOf0t2w5P8iJKfdBbpVNE9naCaOf2g==}
     dev: false
 
-  /@shoelace-style/localize/2.1.3:
-    resolution: {integrity: sha512-AY3uF1Dzg3sBK4nKxvZ2KAjsdFxhLfHVWUpXXjIPaR+rPp8fxBWoNVvnLiROOV/cLg/zdLcU+Nn/xJdqcbEuDw==}
+  /@shoelace-style/localize/3.0.1:
+    resolution: {integrity: sha512-nmv1syJ3ormbGq29GsuxGRK6BFq7Jhx+kVFyuuozz0Pckkvk1SGk2vpZZcdnj2vRZCETvlVB7KYgakUwgGmn+A==}
     dev: false
 
-  /@shoelace-style/shoelace/2.0.0-beta.72:
-    resolution: {integrity: sha512-8ahXPheZjQMXGhu0L+10hiMbfPzbuYW5UroTX3M5wAYUKL1VSI9IQJwlXCf7cBcQGiyjSIIdHsjbfRKxxDFo7w==}
+  /@shoelace-style/shoelace/2.0.0-beta.78:
+    resolution: {integrity: sha512-SLZ+Y/FiaBXeibgYkPvR4xLoF5F0z+OH2yBElec+P/GEo9OFdKm6bftw9dVWZLtQ/wpSnO9UdDNUQ9poTHwbXw==}
     engines: {node: '>=14.17.0'}
     dependencies:
-      '@floating-ui/dom': 0.3.1
-      '@lit-labs/react': 1.0.2
+      '@floating-ui/dom': 0.5.4
+      '@lit-labs/react': 1.0.7
       '@shoelace-style/animations': 1.1.0
-      '@shoelace-style/localize': 2.1.3
-      color: 4.2.1
+      '@shoelace-style/localize': 3.0.1
+      color: 4.2.3
       lit: 2.1.4
       qr-creator: 1.0.0
     dev: false
@@ -491,8 +491,8 @@ packages:
       '@types/node': 17.0.23
     dev: false
 
-  /@types/yauzl/2.9.2:
-    resolution: {integrity: sha512-8uALY5LTvSuHgloDVUvWP3pIauILm+8/0pDMokuDYIoNsOkSwd5AiHBTSEJjKTDcZr5z8UpgOWZkxBF4iJftoA==}
+  /@types/yauzl/2.10.0:
+    resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
       '@types/node': 17.0.23
@@ -1056,19 +1056,19 @@ packages:
   /color-name/1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
-  /color-string/1.9.0:
-    resolution: {integrity: sha512-9Mrz2AQLefkH1UvASKj6v6hj/7eWgjnT/cVsR8CumieLoT+g900exWeNogqtweI8dxloXN9BDQTYro1oWu/5CQ==}
+  /color-string/1.9.1:
+    resolution: {integrity: sha512-shrVawQFojnZv6xM40anx4CkoDP+fZsw/ZerEMsW/pyzsRbElpsL/DBVW7q3ExxwusdNXI3lXpuhEZkzs8p5Eg==}
     dependencies:
       color-name: 1.1.4
       simple-swizzle: 0.2.2
     dev: false
 
-  /color/4.2.1:
-    resolution: {integrity: sha512-MFJr0uY4RvTQUKvPq7dh9grVOTYSFeXja2mBXioCGjnjJoXrAp9jJ1NQTDR73c9nwBSAQiNKloKl5zq9WB9UPw==}
+  /color/4.2.3:
+    resolution: {integrity: sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==}
     engines: {node: '>=12.5.0'}
     dependencies:
       color-convert: 2.0.1
-      color-string: 1.9.0
+      color-string: 1.9.1
     dev: false
 
   /colorette/1.4.0:
@@ -1861,7 +1861,7 @@ packages:
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
-      '@types/yauzl': 2.9.2
+      '@types/yauzl': 2.10.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -2524,12 +2524,12 @@ packages:
       - supports-color
     dev: false
 
-  /konnors-pc/0.0.9_75fe39f29840d3ad5eb86d1d3b81cd54:
+  /konnors-pc/0.0.9_c7a7245da02ef2dd505537d6f41e0f4c:
     resolution: {integrity: sha512-NjIbezJX1iLRXMV3J21tAJBloY2zl+jzgmLFAZusPEBX3yV5mm6Ro0CDlbqwja2pUvE077CDC4f4Wp1XNva6Ew==}
     peerDependencies:
       '@shoelace-style/shoelace': '>= 2.0.0-beta.72'
     dependencies:
-      '@shoelace-style/shoelace': 2.0.0-beta.72
+      '@shoelace-style/shoelace': 2.0.0-beta.78
       lit: 2.1.4
       tslib: 2.3.1
     dev: false
@@ -2552,7 +2552,7 @@ packages:
   /lit-element/3.1.2:
     resolution: {integrity: sha512-5VLn5a7anAFH7oz6d7TRG3KiTZQ5GEFsAgOKB8Yc+HDyuDUGOT2cL1CYTz/U4b/xlJxO+euP14pyji+z3Z3kOg==}
     dependencies:
-      '@lit/reactive-element': 1.3.1
+      '@lit/reactive-element': 1.3.4
       lit-html: 2.1.3
     dev: false
 
@@ -2565,7 +2565,15 @@ packages:
   /lit/2.1.4:
     resolution: {integrity: sha512-m1tHAZdXQhiBe0ReAjyVIUeKnHZpBfx+A5R5dkia8dtvIBwOR6KhD+RxaDnCwrEavRqkZAy5ntLv7chiOZCdNg==}
     dependencies:
-      '@lit/reactive-element': 1.3.1
+      '@lit/reactive-element': 1.3.4
+      lit-element: 3.1.2
+      lit-html: 2.1.3
+    dev: false
+
+  /lit/2.2.8:
+    resolution: {integrity: sha512-QjeNbi/H9LVIHR+u0OqsL+hs62a16m02JlJHYN48HcBuXyiPYR8JvzsTp5dYYS81l+b9Emp3UaGo82EheV0pog==}
+    dependencies:
+      '@lit/reactive-element': 1.3.4
       lit-element: 3.1.2
       lit-html: 2.1.3
     dev: false
@@ -3676,7 +3684,7 @@ packages:
     dev: false
 
   /simple-swizzle/0.2.2:
-    resolution: {integrity: sha1-pNprY1/8zMoz9w0Xy5JZLeleVXo=}
+    resolution: {integrity: sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==}
     dependencies:
       is-arrayish: 0.3.2
     dev: false
