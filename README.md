@@ -1,6 +1,6 @@
 # README
 
-Rails 6.1 + CableReady 5 + StimulusReflex 3.5 + Vite
+Rails 7 + CableReady 5 + StimulusReflex 3.5 + Vite
 
 ## Prerequisites
 
