@@ -1,7 +1,8 @@
-export function asPromise (callback, ...args) {
+export function asPromise (callback) {
   return new Promise((resolve, reject) => {
     try {
-      resolve(callback(...args))
+      const result = callback()
+      resolve(result)
     } catch(e) {
       reject(e)
     }

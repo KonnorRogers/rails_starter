@@ -14,10 +14,9 @@ import { componentPromises } from "../components"
   await Promise.allSettled([
     // ...shoelacePromises,
     componentPromises(),
-    asPromise(preventDoubleClick),
-    // asPromise(Rails.start.bind(Rails), { errorRenderer: "turbo" }),
-    asPromise(Rails.start.bind(Rails)),
-    asPromise(ActiveStorage.start),
+    asPromise(() => componentPromises()),
+    asPromise(() => Rails.start()),
+    asPromise(() => ActiveStorage.start()),
   ]);
 })();
 
