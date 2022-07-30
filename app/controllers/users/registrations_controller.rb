@@ -10,9 +10,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /users
-  # def create
-  #   super
-  # end
+  def create
+    super do |resource|
+      resource.create_personal_organization
+    end
+  end
 
   # GET /users/edit
   # def edit

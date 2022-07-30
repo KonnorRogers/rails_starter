@@ -10,8 +10,6 @@ class User < ApplicationRecord
 
   belongs_to :current_organization, class_name: "Organization", optional: true
 
-  after_commit :create_personal_organization, on: :create
-
   def active_organizations
     organizations.where(id: active_memberships.pluck(:organization_id))
   end
