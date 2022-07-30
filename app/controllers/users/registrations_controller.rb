@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /users
   def create
     super do |resource|
-      resource.create_personal_organization
+      resource.create_personal_organization if resource.persisted?
     end
   end
 
