@@ -21,7 +21,7 @@ class User < ApplicationRecord
   end
 
   def create_personal_organization
-    ActiveRecord::Base.transcation do
+    ActiveRecord::Base.transaction do
       organization = Organization.create!(personal_organization: true)
       membership = organization.send_membership(sender: self, receiver: self)
       accept_membership(membership)
