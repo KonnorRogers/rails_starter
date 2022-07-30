@@ -87,8 +87,8 @@ sl-card {
   --sl-input-label-color: var(--text-color-danger);
   --sl-input-help-text-color: var(--text-color-danger);
 
-  /* Clean this up, this is the HSL of --sl-color-red-500 */
-  --sl-focus-ring: 0 0 0 var(--sl-focus-ring-width) hsl(0 84.2% 60.2% / var(--sl-focus-ring-alpha))
+  /* Clean this up, this is the HSL of --sl-color-red-500 with 0.4 opacity */
+  --sl-input-focus-ring-color: hsl(0 84.2% 60.2% / 40%)
 }
 
 .dialog::part(title) {
