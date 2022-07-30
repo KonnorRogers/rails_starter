@@ -29,5 +29,9 @@
         <%= yield %>
       </kpc-container>
     </main>
+
+    <%= render DialogComponent.new(label: t("confirm"), id: "dialog") do %>
+      <div slot="header"><%= t("account.delete_confirm") %></div>
+    <% end %>
   </body>
 </html>

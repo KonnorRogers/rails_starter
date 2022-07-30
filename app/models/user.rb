@@ -4,14 +4,32 @@ class User < ApplicationRecord
   devise :database_authenticatable, :confirmable, :registerable,
     :recoverable, :rememberable, :validatable, :masqueradable
 
-  has_many :organization_memberships
+  has_many :organization_memberships, dependent: :destroy
   has_many :organizations, through: :organization_memberships
-  has_many :organization_accounts, through: :organization_memberships
   has_many :notifications, as: :recipient # Noticed
 
-  has_one :selected_account, -> { active_accounts.find_by(selected: true) }
-  has_one :selected_organization, -> { selected_account.organization }
+  belongs_to :current_organization, class_name: "Organization", optional: true
 
-  scope :active_memberships, -> { organization_memberships.active }
-  scope :active_organizations, -> { organizations.where(id: active_memberships.ids) }
+  after_commit :create_personal_organization, on: :create
+
+  def active_organizations
+    organizations.where(id: active_memberships.pluck(:organization_id))
+  end
+
+  def active_memberships
+    organization_memberships.active
+  end
+
+  def create_personal_organization
+    ActiveRecord::Base.transcation do
+      organization = Organization.create!(personal_organization: true)
+      membership = organization.send_membership(sender: self, receiver: self)
+      accept_membership(membership)
+      update!(current_organization: organization)
+    end
+  end
+
+  def accept_membership(membership)
+    membership.update!(accepted_at: Time.current)
+  end
 end

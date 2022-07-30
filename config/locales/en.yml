@@ -75,6 +75,8 @@ en:
   account:
     delete_confirm: "Are you sure you want to delete your account?"
     edit: "Edit account"
+  organizations:
+    edit: "Edit organization"
 
 
 

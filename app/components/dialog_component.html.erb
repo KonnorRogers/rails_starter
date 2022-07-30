@@ -1,11 +1,11 @@
-<%= tag.sl_dialog(class: "dialog", **html_attributes) do %>
+<%= tag.sl_dialog(class: "dialog #{html_attributes[:class]}", "data-controller": "dialog", **html_attributes) do %>
   <div class="dialog__body"><%= content %></div>
 
   <div class="dialog__footer" slot="footer">
     <% if footer.nil? %>
-      <sl-button size="medium" data-action="click->dialog#dismiss">Cancel</sl-button>
+      <sl-button size="medium" data-action="click->dialog#decline">Cancel</sl-button>
       <div style="margin: 0 var(--sl-spacing-x-small);"></div>
-      <sl-button size="medium" variant="danger" data-action="click->dialog#confirm">Confirm</sl-button>
+      <sl-button size="medium" variant="danger" data-action="click->dialog#accept">Confirm</sl-button>
     <% else %>
       <%= footer %>
     <% end %>

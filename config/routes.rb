@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
+  resources :organizations
+
   # Internal
   if Rails.env.development?
     resources :internal_docs, only: %i[index]

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ApplicationReflex < StimulusReflex::Reflex
+class ApplicationReflex # < StimulusReflex::Reflex
   before_action -> { I18n.backend.reload! } if Rails.env.development?
 
   delegate :current_user, to: :connection

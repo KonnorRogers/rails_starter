@@ -1,36 +1,26 @@
 import { Controller } from "@hotwired/stimulus"
 
-export default class DialogController extends Controller {
-  static targets = ["dialog"]
+class ConfirmEvent extends Event {
+  constructor(answer, options = {}) {
+    ["bubbles", "composable", "cancelable"].forEach((str) => {
+      const option = options[str]
 
-  get confirmedAttr () {
-    return "needs-confirmation"
-  }
+      if (option == null) {
+        options[str] = true
+      }
+    })
 
-  show (event) {
-    if (!event.currentTarget.hasAttribute(this.confirmedAttr)) return
-
-    this.trigger = event.currentTarget
-    event.preventDefault()
-    event.stopImmediatePropagation()
-    this.dialogTarget.show()
-  }
-
-  hide () {
-    this.dialogTarget.hide()
-  }
-
-  dismiss () {
-    this.hide()
-  }
-
-  confirm () {
-    this.trigger.removeAttribute(this.confirmedAttr)
-    this.trigger.click()
-    this.hide()
-
-    this.trigger.setAttribute(this.confirmedAttr, "")
-    this.trigger = undefined
+    super("confirm", options)
+    this.answer = answer
   }
 }
 
+export default class extends Controller {
+  accept () {
+    this.element.dispatchEvent(new ConfirmEvent(true))
+  }
+
+  decline () {
+    this.element.dispatchEvent(new ConfirmEvent(false))
+  }
+}

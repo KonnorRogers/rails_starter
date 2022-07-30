@@ -1,7 +1,18 @@
 <% if user_signed_in? %>
   <%= render "users/logout_link" %>
   <br>
-  <%= render "users/edit_link" %>
+
+  <kpc-link variant="default" href="<%= edit_user_registration_path %>">
+    <%= t("account.edit") %>
+  </kpc-link>
+
+  <% if current_org = current_user.current_organization %>
+    <br>
+
+    <kpc-link variant="default" href="<%= edit_organization_path(current_org) %>">
+      <%= t("organizations.edit") %>
+    </kpc-link>
+  <% end %>
 <% else %>
   <%= render "users/login_link" %>
   <br>

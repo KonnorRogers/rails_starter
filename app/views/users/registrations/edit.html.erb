@@ -15,13 +15,9 @@
     <%= sl_submit { t("update") } %>
   </kpc-form-group>
 
-  <kpc-form-group size="medium" data-controller="dialog">
-    <%= sl_submit variant: "danger", formmethod: :delete, "needs-confirmation": "", data: { action: "click->dialog#show:capture" } do %>
+  <kpc-form-group size="medium">
+    <%= sl_submit variant: "danger", formmethod: :delete, data: { controller: "confirm" } do %>
       <%= t("auth.cancel") %>
-    <% end %>
-
-    <%= render DialogComponent.new("data-dialog-target": "dialog", label: t("confirm")) do %>
-      <div slot="header"><%= t("account.delete_confirm") %></div>
     <% end %>
   </kpc-form-group>
 <% end %>
