@@ -20,16 +20,23 @@
   </head>
 
   <body>
-    <div style="margin: var(--sl-spacing-x-small);">
-      <%= render "/flashes", flash: flash unless content_for(:flash) %>
+    <!-- Flashes -->
+    <div style="margin: var(--sl-spacing-x-small);" id="flashes">
+      <% unless content_for(:flash)  %>
+        <% flash.each do |type, message| %>
+          <%= render FlashComponent.new(variant: type, message: message) %>
+        <% end %>
+      <% end %>
     </div>
 
-    <main>
+    <!-- Main -->
+    <main id="main">
       <kpc-container size="xx-large" style="margin: var(--sl-spacing-4x-large) auto 0 auto;">
         <%= yield %>
       </kpc-container>
     </main>
 
+    <!-- Dialog -->
     <%= render DialogComponent.new(label: t("confirm"), id: "dialog") do %>
       <div slot="header"><%= t("account.delete_confirm") %></div>
     <% end %>
