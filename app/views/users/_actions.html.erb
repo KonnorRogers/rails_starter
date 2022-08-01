@@ -1,24 +1,35 @@
 <% if user_signed_in? %>
-  <%= render "users/logout_link" %>
+  <form method="delete" action="/logout">
+    <%= sl_submit { t("auth.logout") } %>
+  </form>
+
   <br>
 
   <kpc-link variant="default" href="<%= edit_user_registration_path %>">
     <%= t("account.edit") %>
   </kpc-link>
 
-  <% if current_org = current_user.current_organization %>
-    <br>
+  <%# <% if current_org = current_user.current_organization %1> %>
+  <%#   <br> %>
 
-    <kpc-link variant="default" href="<%= edit_organization_path(current_org) %>">
-      <%= t("organizations.edit") %>
-    </kpc-link>
-  <% end %>
+  <%#   <kpc-link variant="default" href="<%= edit_organization_path(current_org) %1>"> %>
+  <%#     <%= t("organizations.edit") %1> %>
+  <%#   </kpc-link> %>
+  <%# <% end %1> %>
 <% else %>
-  <%= render "users/login_link" %>
+  <kpc-link variant="default" href="<%= login_path %>">
+    <%= t("auth.login") %>
+  </kpc-link>
+
   <br>
-  <%= render "users/signup_link" %>
+
+  <kpc-link variant="default" href="<%= signup_path %>">
+    <%= t("auth.signup") %>
+  </kpc-link>
+
   <br>
-  <% if controller_name != "confirmations" %>
-    <%= render "users/confirmation_link" %>
-  <% end %>
+
+  <kpc-link variant="default" href="<%= new_user_confirmation_path %>">
+    <%= t("auth.no_confirmation") %>
+  </kpc-link>
 <% end %>
