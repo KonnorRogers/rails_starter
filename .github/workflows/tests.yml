@@ -16,9 +16,9 @@ jobs:
         image: redis
         options: >-
           --health-cmd "redis-cli ping"
-          --health-interval 5s
-          --health-timeout 1s
-          --health-retries 5
+          --health-interval 0.3s
+          --health-timeout 10s
+          --health-retries 30
         ports:
           # Maps port 6379 on service container to the host
           - 6379:6379
