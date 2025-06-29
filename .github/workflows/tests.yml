@@ -33,9 +33,9 @@ jobs:
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
-          --health-interval 5s
-          --health-timeout 1s
-          --health-retries 5
+          --health-interval 0.3s
+          --health-timeout 10s
+          --health-retries 30
         ports:
           - "5432:5432"
       chrome:
